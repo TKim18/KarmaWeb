@@ -1,20 +1,25 @@
-class OrdersController < ApplicationController
+require 'circles_controller.rb'
+
+class Circles::OrdersController < ApplicationController
   before_action :set_order, only: [:show, :edit, :update, :destroy]
+  before_filter :load_parent
 
   # GET /orders
   # GET /orders.json
   def index
-    @orders = Order.all
+    @orders = @circle.orders.all
   end
 
   # GET /orders/1
   # GET /orders/1.json
   def show
+    id = params[:id]
+    @order = @circle.order.find(id)
   end
 
   # GET /orders/new
   def new
-    @order = Order.new
+    @order = @circle.orders.new
   end
 
   # GET /orders/1/edit
@@ -70,5 +75,9 @@ class OrdersController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def order_params
       params.require(:order).permit(:name, :circleName, :requestUserName, :acceptUserName, :category, :fromLocation, :toDestination, :instant, :preOrderTime, :cost)
+    end
+
+    def load_parent
+      @circle = Circle.find(params[:circle_id])
     end
 end

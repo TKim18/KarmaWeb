@@ -1,6 +1,4 @@
 class User < ApplicationRecord
-	belongs_to :circle
-
     def self.from_omniauth(auth)
         where(provider: auth.provider, uid: auth.uid).first_or_initialize.tap do |user|
             user.provider = auth.provider
@@ -12,7 +10,7 @@ class User < ApplicationRecord
 	    end
 	end
 
-	def self.findCircle(userId)
+	def self.findUsersCircle(userId)
 		circle = User.where("uid = ?", userId).pluck(:circleName).first
 		if circle 
 			return circle

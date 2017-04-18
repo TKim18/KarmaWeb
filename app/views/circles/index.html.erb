@@ -1,0 +1,15 @@
+<h1>Hello! You must be a new user.<h1>
+<h2>If you already have friends to make a circle with, click the circle to join here<h2>
+
+<%= form_tag(circles_path, :method => "get", id: "search-form") do %>
+    <%= text_field_tag :search, params[:search], placeholder: "Search Circles" %>
+<%= submit_tag 'Search', class: 'button' %>
+<% end %>
+
+<% @circles.each do |circle| %>
+	<%= link_to circle.name, circle %>
+<% end %>
+
+<h2>If you want to make your own circle, click the link below.<h2>
+
+<%= link_to 'New Circle', new_circle_path %>
