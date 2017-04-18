@@ -1,0 +1,60 @@
+Tables:
+
+Users:
+provider
+uid
+name
+oauth_token
+oauth_expires_at
+created_at - datetime
+updated_at - datetime
+email - string
+fullName - string
+karmaPoints - decimal
+circleName - string
+circleId - foreign key
+# circles (many circles to one user but for now it's one circle)
+homeLocation - string
+
+Circles:
+name - string
+members (many members to one circle)
+pendingUsers (many pendingUsers to one circle)
+orders - (many orders to one circle)
+
+(Monster table)
+Orders:
+itemName - string
+circleId - foreign key (one circleId for many orders)
+requestUserName - string
+requestUserId - foreign key
+acceptUserName - string
+acceptUserId - foreign key
+category - string
+fromLocation - string
+toDestination - string
+created_at - datetime
+updated_at - datetime
+instant - boolean (true -> instant, false -> preorder)
+preorderTime - datetime
+(validation: if instant is false, then preorderTime != null)
+cost - decimal
+
+rails generate scaffold Order name:string circleName:string requestUserName:string acceptUserName:string category:string fromLocation:string toDestination:string instant:boolean preOrderTime:datetime cost:decimal
+	
+
+Handy Lists:
+Possible Locations(From)
+Possible Destinations(To)
+Menus:
+	WeswingsMenu:
+
+	SummerfieldsMenu:
+
+	UsdanMenu:
+
+Roughly in the format of item (string) - cost (decimal)
+
+
+
+

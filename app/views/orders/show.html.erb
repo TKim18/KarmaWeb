@@ -1,0 +1,54 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @order.name %>
+</p>
+
+<p>
+  <strong>Circlename:</strong>
+  <%= @order.circleName %>
+</p>
+
+<p>
+  <strong>Requestusername:</strong>
+  <%= @order.requestUserName %>
+</p>
+
+<p>
+  <strong>Acceptusername:</strong>
+  <%= @order.acceptUserName %>
+</p>
+
+<p>
+  <strong>Category:</strong>
+  <%= @order.category %>
+</p>
+
+<p>
+  <strong>Fromlocation:</strong>
+  <%= @order.fromLocation %>
+</p>
+
+<p>
+  <strong>Todestination:</strong>
+  <%= @order.toDestination %>
+</p>
+
+<p>
+  <strong>Instant:</strong>
+  <%= @order.instant %>
+</p>
+
+<p>
+  <strong>Preordertime:</strong>
+  <%= @order.preOrderTime %>
+</p>
+
+<p>
+  <strong>Cost:</strong>
+  <%= @order.cost %>
+</p>
+
+<%= link_to 'Edit', edit_order_path(@order) %> |
+<%= link_to 'Back', orders_path %>

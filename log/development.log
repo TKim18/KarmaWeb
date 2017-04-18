@@ -646,3 +646,154 @@ Processing by LoginController#index as HTML
 Completed 200 OK in 52ms (Views: 50.0ms | ActiveRecord: 0.0ms)
 
 
+Started GET "/" for 127.0.0.1 at 2017-04-15 16:23:04 -0400
+Processing by LoginController#index as HTML
+  Rendering login/index.html.erb within layouts/application
+  Rendered login/index.html.erb within layouts/application (97.2ms)
+Completed 200 OK in 107ms (Views: 106.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/auth/google_oauth2" for 127.0.0.1 at 2017-04-15 16:23:07 -0400
+Started GET "/auth/google_oauth2" for 127.0.0.1 at 2017-04-15 16:23:07 -0400
+Started GET "/auth/google_oauth2/callback?state=e669e2cc4a241a2aa1534f812762ac7b95fa67c3ca8035d8&code=4/W-bHbG0uvfdWOWVXMy0O9QMBl8kIKHQYwacaqtgxROs" for 127.0.0.1 at 2017-04-15 16:23:07 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"state"=>"e669e2cc4a241a2aa1534f812762ac7b95fa67c3ca8035d8", "code"=>"4/W-bHbG0uvfdWOWVXMy0O9QMBl8kIKHQYwacaqtgxROs", "provider"=>"google_oauth2"}
+DEPRECATION WARNING: env is deprecated and will be removed from Rails 5.1 (called from create at /home/ttkim/Desktop/KarmaWeb/app/controllers/sessions_controller.rb:3)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."provider" = ? AND "users"."uid" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["provider", "google_oauth2"], ["uid", "108513084629689564112"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "users" SET "oauth_token" = ?, "oauth_expires_at" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["oauth_token", "ya29.GlwuBBOr-MytI-6tpVWYx-ZwbT_9IqQYrzghM9q6QPueyU7eLEYWSPL2AyYENt1DdWrqgccgnmlux8XvB6-Xy95igJ_D9leTaof2UMw-2ryWSDeRr5ewj6iYQ7PB9A"], ["oauth_expires_at", 2017-04-15 21:23:07 UTC], ["updated_at", 2017-04-15 20:23:08 UTC], ["id", 1]]
+  [1m[35m (83.3ms)[0m  [1m[36mcommit transaction[0m
+Completed 500 Internal Server Error in 425ms (ActiveRecord: 86.4ms)
+
+
+  
+NameError (undefined local variable or method `posts_path' for #<SessionsController:0x007fc05856cb40>):
+  
+app/controllers/sessions_controller.rb:5:in `create'
+  Rendering /var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (6.5ms)
+  Rendering /var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.1ms)
+  Rendering /var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (3.1ms)
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (191.8ms)
+Started GET "/" for 127.0.0.1 at 2017-04-17 20:12:51 -0400
+Started GET "/" for 127.0.0.1 at 2017-04-17 20:12:52 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by LoginController#index as HTML
+Processing by LoginController#index as HTML
+  Rendering login/index.html.erb within layouts/application
+  Rendering login/index.html.erb within layouts/application
+  Rendered login/index.html.erb within layouts/application (1982.2ms)
+  Rendered login/index.html.erb within layouts/application (2000.0ms)
+Completed 200 OK in 2090ms (Views: 2045.4ms | ActiveRecord: 0.0ms)
+
+
+Completed 200 OK in 2115ms (Views: 2060.5ms | ActiveRecord: 0.0ms)
+
+
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateOrders (20170418001427)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE TABLE "orders" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "circleName" varchar, "requestUserName" varchar, "acceptUserName" varchar, "category" varchar, "fromLocation" varchar, "toDestination" varchar, "instant" boolean, "preOrderTime" datetime, "cost" decimal, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170418001427"]]
+  [1m[35m (79.0ms)[0m  [1m[36mcommit transaction[0m
+Migrating to AddColumnsToUsers (20170418001622)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "users" ADD "email" varchar[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "users" ADD "fullName" varchar[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "users" ADD "karmaPoints" decimal[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "users" ADD "circleName" varchar[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "users" ADD "homeLocation" varchar[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170418001622"]]
+  [1m[35m (100.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (6.7ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Started GET "/" for 127.0.0.1 at 2017-04-17 20:17:18 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by LoginController#index as HTML
+  Rendering login/index.html.erb within layouts/application
+  Rendered login/index.html.erb within layouts/application (902.7ms)
+Completed 200 OK in 957ms (Views: 930.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/auth/google_oauth2" for 127.0.0.1 at 2017-04-17 20:17:21 -0400
+Started GET "/auth/google_oauth2" for 127.0.0.1 at 2017-04-17 20:17:21 -0400
+Started GET "/auth/google_oauth2/callback?state=a44e6c2f0218ad388d542b2e019b20318fcbe514834bbdaa&code=4/oPG6wEzh9_dL0UjDadUadH5XK5UC_n3DgxxWPA4UTH4" for 127.0.0.1 at 2017-04-17 20:17:22 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"state"=>"a44e6c2f0218ad388d542b2e019b20318fcbe514834bbdaa", "code"=>"4/oPG6wEzh9_dL0UjDadUadH5XK5UC_n3DgxxWPA4UTH4", "provider"=>"google_oauth2"}
+DEPRECATION WARNING: env is deprecated and will be removed from Rails 5.1 (called from create at /home/ttkim/Desktop/KarmaWeb/app/controllers/sessions_controller.rb:3)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."provider" = ? AND "users"."uid" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["provider", "google_oauth2"], ["uid", "108513084629689564112"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[33mUPDATE "users" SET "oauth_token" = ?, "oauth_expires_at" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["oauth_token", "ya29.GlwxBFSgkGeJN8fovtjtjDIL-sDSdrcW-KcCEqWyX4enKPIpOkOoVZpVIjrmV-Nrp6OlWAZibUIGNrJjAMDJ5K6qz_RVDhGIrSCpoHM62N9W_fRXxpRZuLP2tl7U9w"], ["oauth_expires_at", 2017-04-18 01:17:22 UTC], ["updated_at", 2017-04-18 00:17:22 UTC], ["id", 1]]
+  [1m[35m (172.0ms)[0m  [1m[36mcommit transaction[0m
+Completed 500 Internal Server Error in 584ms (ActiveRecord: 174.1ms)
+
+
+  
+NameError (undefined local variable or method `posts_path' for #<SessionsController:0x00000003599f18>):
+  
+app/controllers/sessions_controller.rb:5:in `create'
+  Rendering /var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (5.9ms)
+  Rendering /var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.6ms)
+  Rendering /var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (107.0ms)
+Started GET "/" for 127.0.0.1 at 2017-04-17 20:18:00 -0400
+Processing by LoginController#index as HTML
+  Rendering login/index.html.erb within layouts/application
+  Rendered login/index.html.erb within layouts/application (21.3ms)
+Completed 200 OK in 34ms (Views: 32.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/auth/google_oauth2" for 127.0.0.1 at 2017-04-17 20:18:02 -0400
+Started GET "/auth/google_oauth2" for 127.0.0.1 at 2017-04-17 20:18:02 -0400
+Started GET "/auth/google_oauth2/callback?state=2e51cd73629d8d55910cc50cf290d5c570ee49156c42bc83&code=4/jnbdXG7Cy5wXT3tRK_X96-kpU8A4ocRXIHaBeDolNU0" for 127.0.0.1 at 2017-04-17 20:18:02 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"state"=>"2e51cd73629d8d55910cc50cf290d5c570ee49156c42bc83", "code"=>"4/jnbdXG7Cy5wXT3tRK_X96-kpU8A4ocRXIHaBeDolNU0", "provider"=>"google_oauth2"}
+DEPRECATION WARNING: env is deprecated and will be removed from Rails 5.1 (called from create at /home/ttkim/Desktop/KarmaWeb/app/controllers/sessions_controller.rb:3)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."provider" = ? AND "users"."uid" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["provider", "google_oauth2"], ["uid", "108513084629689564112"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "users" SET "oauth_token" = ?, "oauth_expires_at" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["oauth_token", "ya29.GlwxBLR3kNTxe92CgCj6_kyTX_2JT0_SyhSDF9iGWkpcrGs7ipFY79zV3gDqFziLj8wDUNfRRfMzMQd3MQC0rBMFfWzLFivPWSupAXLL0ot7XmEkM4M4MLN06Har7g"], ["oauth_expires_at", 2017-04-18 01:18:02 UTC], ["updated_at", 2017-04-18 00:18:03 UTC], ["id", 1]]
+  [1m[35m (142.1ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/orders
+Completed 302 Found in 171ms (ActiveRecord: 144.2ms)
+
+
+Started GET "/orders" for 127.0.0.1 at 2017-04-17 20:18:03 -0400
+Processing by OrdersController#index as HTML
+  Rendering orders/index.html.erb within layouts/application
+  [1m[36mOrder Load (0.5ms)[0m  [1m[34mSELECT "orders".* FROM "orders"[0m
+  Rendered orders/index.html.erb within layouts/application (5.5ms)
+Completed 200 OK in 65ms (Views: 60.5ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/auth/google_oauth2" for 127.0.0.1 at 2017-04-17 20:18:46 -0400
+Started GET "/auth/google_oauth2" for 127.0.0.1 at 2017-04-17 20:18:46 -0400
+Started GET "/auth/google_oauth2/callback?state=169d357b01116a2bcf5da3123775c054be8befd5d7d7fc7b&code=4/vXC2JEkSj9AuVK2jEsNJv-DOU_tw2T9T3YlsmRG0Dus" for 127.0.0.1 at 2017-04-17 20:18:46 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"state"=>"169d357b01116a2bcf5da3123775c054be8befd5d7d7fc7b", "code"=>"4/vXC2JEkSj9AuVK2jEsNJv-DOU_tw2T9T3YlsmRG0Dus", "provider"=>"google_oauth2"}
+DEPRECATION WARNING: env is deprecated and will be removed from Rails 5.1 (called from create at /home/ttkim/Desktop/KarmaWeb/app/controllers/sessions_controller.rb:3)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."provider" = ? AND "users"."uid" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["provider", "google_oauth2"], ["uid", "108513084629689564112"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[33mUPDATE "users" SET "oauth_token" = ?, "oauth_expires_at" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["oauth_token", "ya29.GlwxBA7AoFsXQCeNouFNetSOpoGtv8Y2NphB_YLQaFSCj0b0bpjd5nAH4HSOVlg_UD3kt59GQ6TWdnOL7BBG1BzCjGsOJ7xpSTXWpzI82yTuqIImgPmhZcuR223C-Q"], ["oauth_expires_at", 2017-04-18 01:18:46 UTC], ["updated_at", 2017-04-18 00:18:46 UTC], ["id", 1]]
+  [1m[35m (118.8ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/orders
+Completed 302 Found in 125ms (ActiveRecord: 120.1ms)
+
+
+Started GET "/orders" for 127.0.0.1 at 2017-04-17 20:18:47 -0400
+Processing by OrdersController#index as HTML
+  Rendering orders/index.html.erb within layouts/application
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT "orders".* FROM "orders"[0m
+  Rendered orders/index.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 55ms (Views: 53.0ms | ActiveRecord: 0.2ms)
+
+

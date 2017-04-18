@@ -10,7 +10,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170404225959) do
+ActiveRecord::Schema.define(version: 20170418001622) do
+
+  create_table "orders", force: :cascade do |t|
+    t.string   "name"
+    t.string   "circleName"
+    t.string   "requestUserName"
+    t.string   "acceptUserName"
+    t.string   "category"
+    t.string   "fromLocation"
+    t.string   "toDestination"
+    t.boolean  "instant"
+    t.datetime "preOrderTime"
+    t.decimal  "cost"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+  end
 
   create_table "posts", force: :cascade do |t|
     t.string   "title"
@@ -28,6 +43,11 @@ ActiveRecord::Schema.define(version: 20170404225959) do
     t.datetime "oauth_expires_at"
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false
+    t.string   "email"
+    t.string   "fullName"
+    t.decimal  "karmaPoints"
+    t.string   "circleName"
+    t.string   "homeLocation"
   end
 
 end

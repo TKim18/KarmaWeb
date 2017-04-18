@@ -1,0 +1,67 @@
+<%= form_for(order) do |f| %>
+  <% if order.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(order.errors.count, "error") %> prohibited this order from being saved:</h2>
+
+      <ul>
+      <% order.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :circleName %>
+    <%= f.text_field :circleName %>
+  </div>
+
+  <div class="field">
+    <%= f.label :requestUserName %>
+    <%= f.text_field :requestUserName %>
+  </div>
+
+  <div class="field">
+    <%= f.label :acceptUserName %>
+    <%= f.text_field :acceptUserName %>
+  </div>
+
+  <div class="field">
+    <%= f.label :category %>
+    <%= f.text_field :category %>
+  </div>
+
+  <div class="field">
+    <%= f.label :fromLocation %>
+    <%= f.text_field :fromLocation %>
+  </div>
+
+  <div class="field">
+    <%= f.label :toDestination %>
+    <%= f.text_field :toDestination %>
+  </div>
+
+  <div class="field">
+    <%= f.label :instant %>
+    <%= f.check_box :instant %>
+  </div>
+
+  <div class="field">
+    <%= f.label :preOrderTime %>
+    <%= f.datetime_select :preOrderTime %>
+  </div>
+
+  <div class="field">
+    <%= f.label :cost %>
+    <%= f.text_field :cost %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
