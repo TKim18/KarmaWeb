@@ -2,7 +2,10 @@ class SessionsController < ApplicationController
     def create
         user = User.from_omniauth(env["omniauth.auth"])
         session[:user_id] = user.id
-        redirect_to orders_path
+        circle = User.findCircle(user.id)
+        if circle == false
+			redirect_to circles_path
+		else
     end
   
     def destroy
