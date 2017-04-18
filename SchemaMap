@@ -1,3 +1,7 @@
+Relationships:
+Many Users in one Circle
+Many Orders in one Circle
+
 Tables:
 
 Users:
@@ -42,7 +46,6 @@ cost - decimal
 
 rails generate scaffold Order name:string circleName:string requestUserName:string acceptUserName:string category:string fromLocation:string toDestination:string instant:boolean preOrderTime:datetime cost:decimal
 	
-
 Handy Lists:
 Possible Locations(From)
 Possible Destinations(To)

@@ -10,7 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170418001622) do
+ActiveRecord::Schema.define(version: 20170418010545) do
+
+  create_table "circles", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string   "name"
+  end
 
   create_table "orders", force: :cascade do |t|
     t.string   "name"
@@ -25,6 +31,8 @@ ActiveRecord::Schema.define(version: 20170418001622) do
     t.decimal  "cost"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
+    t.integer  "circle_id"
+    t.index ["circle_id"], name: "index_orders_on_circle_id"
   end
 
   create_table "posts", force: :cascade do |t|
@@ -48,6 +56,8 @@ ActiveRecord::Schema.define(version: 20170418001622) do
     t.decimal  "karmaPoints"
     t.string   "circleName"
     t.string   "homeLocation"
+    t.integer  "circle_id"
+    t.index ["circle_id"], name: "index_users_on_circle_id"
   end
 
 end

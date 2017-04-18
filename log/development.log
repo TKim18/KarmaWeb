@@ -797,3 +797,86 @@ Processing by OrdersController#index as HTML
 Completed 200 OK in 55ms (Views: 53.0ms | ActiveRecord: 0.2ms)
 
 
+Started GET "/auth/google_oauth2" for 127.0.0.1 at 2017-04-17 20:29:26 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Started GET "/auth/google_oauth2" for 127.0.0.1 at 2017-04-17 20:29:26 -0400
+Started GET "/auth/google_oauth2/callback?state=2e2d2c0b440193b3ea389a20c6b7f3bb1a2f4578fa94ab24&code=4/ZU7m28XgTX5qH887ZINen3HOsI9I8pL_Lf5RpccaU90" for 127.0.0.1 at 2017-04-17 20:29:27 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"state"=>"2e2d2c0b440193b3ea389a20c6b7f3bb1a2f4578fa94ab24", "code"=>"4/ZU7m28XgTX5qH887ZINen3HOsI9I8pL_Lf5RpccaU90", "provider"=>"google_oauth2"}
+DEPRECATION WARNING: env is deprecated and will be removed from Rails 5.1 (called from create at /home/ttkim/Desktop/KarmaWeb/app/controllers/sessions_controller.rb:3)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."provider" = ? AND "users"."uid" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["provider", "google_oauth2"], ["uid", "108513084629689564112"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.9ms)[0m  [1m[33mUPDATE "users" SET "oauth_token" = ?, "oauth_expires_at" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["oauth_token", "ya29.GlwxBIturRJ5q8yhM_jWOSG5dPdkVwgsYuzIPOkCUlqgO85cxv1vc96aWBAR-NFVv1dRho8OtHIon5exbnBgeuW3JV-GyALM0ZxlYyEbAJz7CqE2CzTFlaehl5hC5g"], ["oauth_expires_at", 2017-04-18 01:29:27 UTC], ["updated_at", 2017-04-18 00:29:27 UTC], ["id", 1]]
+  [1m[35m (135.4ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/orders
+Completed 302 Found in 172ms (ActiveRecord: 138.5ms)
+
+
+Started GET "/orders" for 127.0.0.1 at 2017-04-17 20:29:27 -0400
+Processing by OrdersController#index as HTML
+  Rendering orders/index.html.erb within layouts/application
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT "orders".* FROM "orders"[0m
+  Rendered orders/index.html.erb within layouts/application (4.6ms)
+Completed 200 OK in 468ms (Views: 464.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/orders/new" for 127.0.0.1 at 2017-04-17 20:29:29 -0400
+Processing by OrdersController#new as HTML
+  Rendering orders/new.html.erb within layouts/application
+  Rendered orders/_form.html.erb (191.4ms)
+  Rendered orders/new.html.erb within layouts/application (195.7ms)
+Completed 200 OK in 423ms (Views: 327.2ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/orders" for 127.0.0.1 at 2017-04-17 20:30:34 -0400
+Processing by OrdersController#index as HTML
+  Rendering orders/index.html.erb within layouts/application
+  [1m[36mOrder Load (0.8ms)[0m  [1m[34mSELECT "orders".* FROM "orders"[0m
+  Rendered orders/index.html.erb within layouts/application (5.2ms)
+Completed 200 OK in 78ms (Views: 70.1ms | ActiveRecord: 0.8ms)
+
+
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateCircles (20170418005345)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.6ms)[0m  [1m[35mCREATE TABLE "circles" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170418005345"]]
+  [1m[35m (269.4ms)[0m  [1m[36mcommit transaction[0m
+Migrating to AddNameToCircles (20170418010126)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "circles" ADD "name" varchar[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170418010126"]]
+  [1m[35m (63.1ms)[0m  [1m[36mcommit transaction[0m
+Migrating to AddReferencesToOrder (20170418010516)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "orders" ADD "circle_id" integer[0m
+  [1m[35m (0.1ms)[0m  [1m[34mselect sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "index_orders_on_circle_id" ON "orders" ("circle_id")[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170418010516"]]
+  [1m[35m (123.1ms)[0m  [1m[36mcommit transaction[0m
+Migrating to AddReferencesToUsers (20170418010545)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "users" ADD "circle_id" integer[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "index_users_on_circle_id" ON "users" ("circle_id")[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170418010545"]]
+  [1m[35m (197.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_orders_on_circle_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_orders_on_circle_id' AND type='index'
+[0m
+  [1m[35m (0.4ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_circle_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_circle_id' AND type='index'
+[0m
