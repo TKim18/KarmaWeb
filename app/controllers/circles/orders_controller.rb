@@ -8,19 +8,23 @@ class Circles::OrdersController < ApplicationController
   # GET /orders.json
   def index
     @orders = @circle.orders.all
+    # Show only the orders that haven't been accepted
+    @orders = @circle.orders.where(acceptUserName: "-1")
     if @orders.empty?
       redirect_to empty_circle_orders_path
-    end 
+    end
   end
 
   def empty
+    # @orders = @circle.orders.all
+    # if !(@orders.empty?)
+    #   redirect_to circle_orders_path
+    # end
   end
 
   # GET /orders/1
   # GET /orders/1.json
   def show
-    id = params[:id]
-    @order = @circle.orders.find(id)
   end
 
   # GET /orders/new
