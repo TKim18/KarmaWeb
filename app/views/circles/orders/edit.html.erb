@@ -1,6 +1,21 @@
 <h1>Editing Order</h1>
 
-<%= render 'form', order: @order %>
+<%= form_tag circle_order_path(@circle, @order), :method => :put do %>
+	<%= label :name, 'Item Name' %>
+	<%= text_field_tag "order[name]", @order.name %>
+	<%= label :category, 'Category' %>
+	<%= text_field_tag "order[category]", @order.category %>
+	<%= label :fromLocation, 'Where do you want food from?' %>
+	<%= text_field_tag "order[fromLocation]", @order.fromLocation %>
+	<%= label :toDestination, 'Where do you want your food delivered to?' %>
+	<%= text_field_tag "order[toDestination]", @order.toDestination %>
+	<%= label :instant, 'Do you want your food now?' %>
+	<%= check_box_tag "order[instant]", @order.instant %>
+	<%= label :cost, 'How much will your food cost' %>
+	<%= text_field_tag "order[cost]", @order.cost %>
+	<br>
+	<%= submit_tag 'Save changes', class: 'button' %>
+<% end %>
 
-<%= link_to 'Show', @order %> |
-<%= link_to 'Back', orders_path %>
+<%= link_to 'Show', circle_order_path(@circle, @order) %> |
+<%= link_to 'Back', circle_orders_path(@circle) %>

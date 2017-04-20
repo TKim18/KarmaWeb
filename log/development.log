@@ -1919,3 +1919,626 @@ Processing by Circles::OrdersController#index as HTML
 Completed 200 OK in 58ms (Views: 53.0ms | ActiveRecord: 0.4ms)
 
 
+Started GET "/circles/1/orders/1" for 127.0.0.1 at 2017-04-19 20:06:11 -0400
+Processing by Circles::OrdersController#show as HTML
+  Parameters: {"circle_id"=>"1", "id"=>"1"}
+  [1m[36mOrder Load (0.3ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCircle Load (0.1ms)[0m  [1m[34mSELECT  "circles".* FROM "circles" WHERE "circles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 17ms (ActiveRecord: 0.4ms)
+
+
+  
+NoMethodError (undefined method `order' for #<Circle:0x007fab616d4458>
+Did you mean?  orders
+               orders=):
+  
+app/controllers/circles/orders_controller.rb:17:in `show'
+  Rendering /var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (5.5ms)
+  Rendering /var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.3ms)
+  Rendering /var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (30.6ms)
+Started GET "/circles/1/orders/1" for 127.0.0.1 at 2017-04-19 20:06:33 -0400
+DEPRECATION WARNING: before_filter is deprecated and will be removed in Rails 5.1. Use before_action instead. (called from <class:OrdersController> at /home/ttkim/Desktop/KarmaWeb/app/controllers/circles/orders_controller.rb:5)
+Processing by Circles::OrdersController#show as HTML
+  Parameters: {"circle_id"=>"1", "id"=>"1"}
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCircle Load (0.1ms)[0m  [1m[34mSELECT  "circles".* FROM "circles" WHERE "circles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."circle_id" = ? AND "orders"."id" = ? LIMIT ?[0m  [["circle_id", 1], ["id", 1], ["LIMIT", 1]]
+  Rendering circles/orders/show.html.erb within layouts/application
+  Rendered circles/orders/show.html.erb within layouts/application (146.5ms)
+Completed 500 Internal Server Error in 176ms (ActiveRecord: 2.1ms)
+
+
+  
+ActionView::Template::Error (undefined method `edit_order_path' for #<#<Class:0x007fab68a18860>:0x007fab60a42640>
+Did you mean?  edit_circle_path):
+    50:   <%= @order.cost %>
+    51: </p>
+    52: 
+    53: <%= link_to 'Edit', edit_order_path(@order) %> |
+    54: <%= link_to 'Back', orders_path %>
+  
+app/views/circles/orders/show.html.erb:53:in `_app_views_circles_orders_show_html_erb__118561863322337369_70187085777020'
+  Rendering /var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (4.9ms)
+  Rendering /var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.0ms)
+  Rendering /var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (24.1ms)
+Started GET "/circles/1/orders/1" for 127.0.0.1 at 2017-04-19 20:07:25 -0400
+Processing by Circles::OrdersController#show as HTML
+  Parameters: {"circle_id"=>"1", "id"=>"1"}
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCircle Load (0.1ms)[0m  [1m[34mSELECT  "circles".* FROM "circles" WHERE "circles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mOrder Load (0.3ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."circle_id" = ? AND "orders"."id" = ? LIMIT ?[0m  [["circle_id", 1], ["id", 1], ["LIMIT", 1]]
+  Rendering circles/orders/show.html.erb within layouts/application
+  Rendered circles/orders/show.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 49ms (Views: 43.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/circles/1/orders" for 127.0.0.1 at 2017-04-19 20:07:29 -0400
+Processing by Circles::OrdersController#index as HTML
+  Parameters: {"circle_id"=>"1"}
+  [1m[36mCircle Load (0.2ms)[0m  [1m[34mSELECT  "circles".* FROM "circles" WHERE "circles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering circles/orders/index.html.erb within layouts/application
+  [1m[36mOrder Load (0.4ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."circle_id" = ?[0m  [["circle_id", 1]]
+  Rendered circles/orders/index.html.erb within layouts/application (16.6ms)
+Completed 200 OK in 67ms (Views: 61.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/circles/1/orders/1" for 127.0.0.1 at 2017-04-19 20:07:31 -0400
+Processing by Circles::OrdersController#show as HTML
+  Parameters: {"circle_id"=>"1", "id"=>"1"}
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCircle Load (0.1ms)[0m  [1m[34mSELECT  "circles".* FROM "circles" WHERE "circles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mOrder Load (0.3ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."circle_id" = ? AND "orders"."id" = ? LIMIT ?[0m  [["circle_id", 1], ["id", 1], ["LIMIT", 1]]
+  Rendering circles/orders/show.html.erb within layouts/application
+  Rendered circles/orders/show.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 51ms (Views: 43.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/circles/1/orders/1/edit" for 127.0.0.1 at 2017-04-19 20:07:32 -0400
+Processing by Circles::OrdersController#edit as HTML
+  Parameters: {"circle_id"=>"1", "id"=>"1"}
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCircle Load (0.1ms)[0m  [1m[34mSELECT  "circles".* FROM "circles" WHERE "circles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering circles/orders/edit.html.erb within layouts/application
+  Rendered circles/orders/_form.html.erb (160.9ms)
+  Rendered circles/orders/edit.html.erb within layouts/application (162.7ms)
+Completed 500 Internal Server Error in 171ms (ActiveRecord: 0.2ms)
+
+
+  
+ActionView::Template::Error (undefined method `order_path' for #<#<Class:0x007fab68a18860>:0x007fab5c9ac5e0>):
+    1: <%= form_for(order) do |f| %>
+    2:   <% if order.errors.any? %>
+    3:     <div id="error_explanation">
+    4:       <h2><%= pluralize(order.errors.count, "error") %> prohibited this order from being saved:</h2>
+  
+app/views/circles/orders/_form.html.erb:1:in `_app_views_circles_orders__form_html_erb__1591943090747518297_70186983742960'
+app/views/circles/orders/edit.html.erb:3:in `_app_views_circles_orders_edit_html_erb__2904766412127878838_70186984892420'
+  Rendering /var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (6.6ms)
+  Rendering /var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.6ms)
+  Rendering /var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (28.8ms)
+Started GET "/circles/1/orders/1" for 127.0.0.1 at 2017-04-19 20:08:13 -0400
+Processing by Circles::OrdersController#show as HTML
+  Parameters: {"circle_id"=>"1", "id"=>"1"}
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCircle Load (0.1ms)[0m  [1m[34mSELECT  "circles".* FROM "circles" WHERE "circles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."circle_id" = ? AND "orders"."id" = ? LIMIT ?[0m  [["circle_id", 1], ["id", 1], ["LIMIT", 1]]
+  Rendering circles/orders/show.html.erb within layouts/application
+  Rendered circles/orders/show.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 35ms (Views: 30.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/circles/1/orders" for 127.0.0.1 at 2017-04-19 20:08:15 -0400
+Processing by Circles::OrdersController#index as HTML
+  Parameters: {"circle_id"=>"1"}
+  [1m[36mCircle Load (0.7ms)[0m  [1m[34mSELECT  "circles".* FROM "circles" WHERE "circles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering circles/orders/index.html.erb within layouts/application
+  [1m[36mOrder Load (0.4ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."circle_id" = ?[0m  [["circle_id", 1]]
+  Rendered circles/orders/index.html.erb within layouts/application (8.4ms)
+Completed 200 OK in 83ms (Views: 76.9ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/circles/1/orders" for 127.0.0.1 at 2017-04-19 20:08:30 -0400
+Processing by Circles::OrdersController#index as HTML
+  Parameters: {"circle_id"=>"1"}
+  [1m[36mCircle Load (0.5ms)[0m  [1m[34mSELECT  "circles".* FROM "circles" WHERE "circles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering circles/orders/index.html.erb within layouts/application
+  [1m[36mOrder Load (0.4ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."circle_id" = ?[0m  [["circle_id", 1]]
+  Rendered circles/orders/index.html.erb within layouts/application (6.1ms)
+Completed 200 OK in 49ms (Views: 44.2ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/circles/1/orders/new" for 127.0.0.1 at 2017-04-19 20:08:31 -0400
+Processing by Circles::OrdersController#new as HTML
+  Parameters: {"circle_id"=>"1"}
+  [1m[36mCircle Load (0.6ms)[0m  [1m[34mSELECT  "circles".* FROM "circles" WHERE "circles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering circles/orders/new.html.erb within layouts/application
+  Rendered circles/orders/new.html.erb within layouts/application (3.7ms)
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 0.6ms)
+
+
+  
+ActionView::Template::Error (wrong number of arguments (given 0, expected 1..3)):
+    2: 
+    3: <%= form_tag circle_orders_path, :method => :post do %>
+    4: 	<%= label :name, 'Item Name' %>
+    5: 	<%= text_field_tag %>
+    6: 	<%= label :category, 'Category' %>
+    7: 	<%= text_field_tag "order[category]" %>
+    8: 	<%= label :fromLocation, 'Where do you want food from?' %>
+  
+app/views/circles/orders/new.html.erb:5:in `block in _app_views_circles_orders_new_html_erb__3432785051089814568_70187033629880'
+app/views/circles/orders/new.html.erb:3:in `_app_views_circles_orders_new_html_erb__3432785051089814568_70187033629880'
+  Rendering /var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (7.4ms)
+  Rendering /var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.2ms)
+  Rendering /var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.5ms)
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (30.6ms)
+Started GET "/circles/1/orders/new" for 127.0.0.1 at 2017-04-19 20:12:48 -0400
+Processing by Circles::OrdersController#new as HTML
+  Parameters: {"circle_id"=>"1"}
+  [1m[36mCircle Load (0.1ms)[0m  [1m[34mSELECT  "circles".* FROM "circles" WHERE "circles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering circles/orders/new.html.erb within layouts/application
+  Rendered circles/orders/new.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 45ms (Views: 41.8ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/circles/1/orders" for 127.0.0.1 at 2017-04-19 20:12:54 -0400
+Processing by Circles::OrdersController#index as HTML
+  Parameters: {"circle_id"=>"1"}
+  [1m[36mCircle Load (0.2ms)[0m  [1m[34mSELECT  "circles".* FROM "circles" WHERE "circles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering circles/orders/index.html.erb within layouts/application
+  [1m[36mOrder Load (1.5ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."circle_id" = ?[0m  [["circle_id", 1]]
+  Rendered circles/orders/index.html.erb within layouts/application (6.1ms)
+Completed 200 OK in 64ms (Views: 58.1ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/circles/1/orders/1/edit" for 127.0.0.1 at 2017-04-19 20:12:58 -0400
+Processing by Circles::OrdersController#edit as HTML
+  Parameters: {"circle_id"=>"1", "id"=>"1"}
+  [1m[36mOrder Load (0.3ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCircle Load (0.2ms)[0m  [1m[34mSELECT  "circles".* FROM "circles" WHERE "circles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering circles/orders/edit.html.erb within layouts/application
+  Rendered circles/orders/edit.html.erb within layouts/application (131.7ms)
+Completed 500 Internal Server Error in 138ms (ActiveRecord: 0.4ms)
+
+
+  
+ActionView::Template::Error (undefined method `order_path' for #<#<Class:0x007fab68a18860>:0x007fab64019368>):
+    17: 	<%= submit_tag 'Save changes', class: 'button' %>
+    18: <% end %>
+    19: 
+    20: <%= link_to 'Show', @order %> |
+    21: <%= link_to 'Back', orders_path %>
+  
+app/views/circles/orders/edit.html.erb:20:in `_app_views_circles_orders_edit_html_erb__2904766412127878838_70187046981320'
+  Rendering /var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (8.9ms)
+  Rendering /var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.4ms)
+  Rendering /var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (37.2ms)
+Started GET "/circles/1/orders/1/edit" for 127.0.0.1 at 2017-04-19 20:13:46 -0400
+Processing by Circles::OrdersController#edit as HTML
+  Parameters: {"circle_id"=>"1", "id"=>"1"}
+  [1m[36mOrder Load (0.3ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCircle Load (0.2ms)[0m  [1m[34mSELECT  "circles".* FROM "circles" WHERE "circles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering circles/orders/edit.html.erb within layouts/application
+  Rendered circles/orders/edit.html.erb within layouts/application (5.4ms)
+Completed 200 OK in 53ms (Views: 49.8ms | ActiveRecord: 0.4ms)
+
+
+Started PUT "/circles/1/orders/1" for 127.0.0.1 at 2017-04-19 20:13:50 -0400
+Processing by Circles::OrdersController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"smLvjBCTlOzpD+BkUIEkeCxB/ujJdivfE7cVjrS0B2O09FVI7S+4fz1A9kRpXjUemoCB2kuXWKM1sRkOQKrgCQ==", "order"=>{"name"=>"Sfdasf", "category"=>"asfd", "fromLocation"=>"asdf", "toDestination"=>"asdf", "cost"=>""}, "commit"=>"Save changes", "circle_id"=>"1", "id"=>"1"}
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCircle Load (0.1ms)[0m  [1m[34mSELECT  "circles".* FROM "circles" WHERE "circles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCircle Load (0.2ms)[0m  [1m[34mSELECT  "circles".* FROM "circles" WHERE "circles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+Redirected to 
+Completed 500 Internal Server Error in 252ms (ActiveRecord: 0.7ms)
+
+
+  
+NoMethodError (undefined method `order_url' for #<Circles::OrdersController:0x007fab60998780>
+Did you mean?  order_params):
+  
+app/controllers/circles/orders_controller.rb:52:in `block (2 levels) in update'
+app/controllers/circles/orders_controller.rb:50:in `update'
+  Rendering /var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (4.0ms)
+  Rendering /var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.4ms)
+  Rendering /var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.3ms)
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (148.6ms)
+Started PUT "/circles/1/orders/1" for 127.0.0.1 at 2017-04-19 20:14:36 -0400
+DEPRECATION WARNING: before_filter is deprecated and will be removed in Rails 5.1. Use before_action instead. (called from <class:OrdersController> at /home/ttkim/Desktop/KarmaWeb/app/controllers/circles/orders_controller.rb:5)
+Processing by Circles::OrdersController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"smLvjBCTlOzpD+BkUIEkeCxB/ujJdivfE7cVjrS0B2O09FVI7S+4fz1A9kRpXjUemoCB2kuXWKM1sRkOQKrgCQ==", "order"=>{"name"=>"Sfdasf", "category"=>"asfd", "fromLocation"=>"asdf", "toDestination"=>"asdf", "cost"=>""}, "commit"=>"Save changes", "circle_id"=>"1", "id"=>"1"}
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCircle Load (0.1ms)[0m  [1m[34mSELECT  "circles".* FROM "circles" WHERE "circles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCircle Load (0.1ms)[0m  [1m[34mSELECT  "circles".* FROM "circles" WHERE "circles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/circles/1
+Completed 302 Found in 31ms (ActiveRecord: 2.4ms)
+
+
+Started GET "/circles/1" for 127.0.0.1 at 2017-04-19 20:14:36 -0400
+Processing by CirclesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCircle Load (0.1ms)[0m  [1m[34mSELECT  "circles".* FROM "circles" WHERE "circles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://localhost:3000/circles/1/orders
+Completed 302 Found in 2ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/circles/1/orders" for 127.0.0.1 at 2017-04-19 20:14:36 -0400
+Processing by Circles::OrdersController#index as HTML
+  Parameters: {"circle_id"=>"1"}
+  [1m[36mCircle Load (0.1ms)[0m  [1m[34mSELECT  "circles".* FROM "circles" WHERE "circles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering circles/orders/index.html.erb within layouts/application
+  [1m[36mOrder Load (0.3ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."circle_id" = ?[0m  [["circle_id", 1]]
+  Rendered circles/orders/index.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 61ms (Views: 54.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/circles/1/orders/2/edit" for 127.0.0.1 at 2017-04-19 20:14:40 -0400
+Processing by Circles::OrdersController#edit as HTML
+  Parameters: {"circle_id"=>"1", "id"=>"2"}
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCircle Load (0.1ms)[0m  [1m[34mSELECT  "circles".* FROM "circles" WHERE "circles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering circles/orders/edit.html.erb within layouts/application
+  Rendered circles/orders/edit.html.erb within layouts/application (5.6ms)
+Completed 200 OK in 57ms (Views: 53.3ms | ActiveRecord: 0.3ms)
+
+
+Started PUT "/circles/1/orders/2" for 127.0.0.1 at 2017-04-19 20:14:43 -0400
+Processing by Circles::OrdersController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Uo8XoXjyrTC8xpMEsq/+/l3AbzHPa9hiym6hN1/ECLwxDfkFOKHLhqBEC0PUOVIWD1lxYYdYfeoGMqBhjXoK7A==", "order"=>{"name"=>"asdfa", "category"=>"sdf", "fromLocation"=>"sss", "toDestination"=>"aaa", "cost"=>""}, "commit"=>"Save changes", "circle_id"=>"1", "id"=>"2"}
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCircle Load (0.1ms)[0m  [1m[34mSELECT  "circles".* FROM "circles" WHERE "circles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCircle Load (0.1ms)[0m  [1m[34mSELECT  "circles".* FROM "circles" WHERE "circles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[33mUPDATE "orders" SET "name" = ?, "updated_at" = ? WHERE "orders"."id" = ?[0m  [["name", "asdfa"], ["updated_at", 2017-04-20 00:14:43 UTC], ["id", 2]]
+  [1m[35m (183.8ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/circles/1
+Completed 302 Found in 190ms (ActiveRecord: 184.3ms)
+
+
+Started GET "/circles/1" for 127.0.0.1 at 2017-04-19 20:14:44 -0400
+Processing by CirclesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCircle Load (0.1ms)[0m  [1m[34mSELECT  "circles".* FROM "circles" WHERE "circles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://localhost:3000/circles/1/orders
+Completed 302 Found in 2ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/circles/1/orders" for 127.0.0.1 at 2017-04-19 20:14:44 -0400
+Processing by Circles::OrdersController#index as HTML
+  Parameters: {"circle_id"=>"1"}
+  [1m[36mCircle Load (0.1ms)[0m  [1m[34mSELECT  "circles".* FROM "circles" WHERE "circles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering circles/orders/index.html.erb within layouts/application
+  [1m[36mOrder Load (0.3ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."circle_id" = ?[0m  [["circle_id", 1]]
+  Rendered circles/orders/index.html.erb within layouts/application (4.6ms)
+Completed 200 OK in 39ms (Views: 32.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/circles/1/orders/new" for 127.0.0.1 at 2017-04-19 20:15:09 -0400
+Processing by Circles::OrdersController#new as HTML
+  Parameters: {"circle_id"=>"1"}
+  [1m[36mCircle Load (0.2ms)[0m  [1m[34mSELECT  "circles".* FROM "circles" WHERE "circles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering circles/orders/new.html.erb within layouts/application
+  Rendered circles/orders/new.html.erb within layouts/application (5.1ms)
+Completed 200 OK in 62ms (Views: 52.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/circles/1/orders" for 127.0.0.1 at 2017-04-19 20:15:12 -0400
+Processing by Circles::OrdersController#index as HTML
+  Parameters: {"circle_id"=>"1"}
+  [1m[36mCircle Load (0.1ms)[0m  [1m[34mSELECT  "circles".* FROM "circles" WHERE "circles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering circles/orders/index.html.erb within layouts/application
+  [1m[36mOrder Load (0.3ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."circle_id" = ?[0m  [["circle_id", 1]]
+  Rendered circles/orders/index.html.erb within layouts/application (4.6ms)
+Completed 200 OK in 41ms (Views: 36.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/circles/1/orders/4/edit" for 127.0.0.1 at 2017-04-19 20:15:14 -0400
+Processing by Circles::OrdersController#edit as HTML
+  Parameters: {"circle_id"=>"1", "id"=>"4"}
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCircle Load (0.1ms)[0m  [1m[34mSELECT  "circles".* FROM "circles" WHERE "circles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering circles/orders/edit.html.erb within layouts/application
+  Rendered circles/orders/edit.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 64ms (Views: 59.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/circles/1/orders/4" for 127.0.0.1 at 2017-04-19 20:15:16 -0400
+Processing by Circles::OrdersController#show as HTML
+  Parameters: {"circle_id"=>"1", "id"=>"4"}
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCircle Load (0.1ms)[0m  [1m[34mSELECT  "circles".* FROM "circles" WHERE "circles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mOrder Load (0.4ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."circle_id" = ? AND "orders"."id" = ? LIMIT ?[0m  [["circle_id", 1], ["id", 4], ["LIMIT", 1]]
+  Rendering circles/orders/show.html.erb within layouts/application
+  Rendered circles/orders/show.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 60ms (Views: 53.3ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/circles/1/orders/4/edit" for 127.0.0.1 at 2017-04-19 20:15:17 -0400
+Processing by Circles::OrdersController#edit as HTML
+  Parameters: {"circle_id"=>"1", "id"=>"4"}
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCircle Load (0.1ms)[0m  [1m[34mSELECT  "circles".* FROM "circles" WHERE "circles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering circles/orders/edit.html.erb within layouts/application
+  Rendered circles/orders/edit.html.erb within layouts/application (4.6ms)
+Completed 200 OK in 59ms (Views: 54.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/circles/1/orders" for 127.0.0.1 at 2017-04-19 20:15:18 -0400
+Processing by Circles::OrdersController#index as HTML
+  Parameters: {"circle_id"=>"1"}
+  [1m[36mCircle Load (0.1ms)[0m  [1m[34mSELECT  "circles".* FROM "circles" WHERE "circles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering circles/orders/index.html.erb within layouts/application
+  [1m[36mOrder Load (0.3ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."circle_id" = ?[0m  [["circle_id", 1]]
+  Rendered circles/orders/index.html.erb within layouts/application (5.2ms)
+Completed 200 OK in 42ms (Views: 38.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/circles/1/orders/4" for 127.0.0.1 at 2017-04-19 20:15:19 -0400
+Processing by Circles::OrdersController#show as HTML
+  Parameters: {"circle_id"=>"1", "id"=>"4"}
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCircle Load (0.1ms)[0m  [1m[34mSELECT  "circles".* FROM "circles" WHERE "circles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."circle_id" = ? AND "orders"."id" = ? LIMIT ?[0m  [["circle_id", 1], ["id", 4], ["LIMIT", 1]]
+  Rendering circles/orders/show.html.erb within layouts/application
+  Rendered circles/orders/show.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 46ms (Views: 41.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/circles/1/orders/4/edit" for 127.0.0.1 at 2017-04-19 20:15:20 -0400
+Processing by Circles::OrdersController#edit as HTML
+  Parameters: {"circle_id"=>"1", "id"=>"4"}
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCircle Load (0.1ms)[0m  [1m[34mSELECT  "circles".* FROM "circles" WHERE "circles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering circles/orders/edit.html.erb within layouts/application
+  Rendered circles/orders/edit.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 48ms (Views: 45.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/circles/1/orders" for 127.0.0.1 at 2017-04-19 20:15:21 -0400
+Processing by Circles::OrdersController#index as HTML
+  Parameters: {"circle_id"=>"1"}
+  [1m[36mCircle Load (0.1ms)[0m  [1m[34mSELECT  "circles".* FROM "circles" WHERE "circles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering circles/orders/index.html.erb within layouts/application
+  [1m[36mOrder Load (0.3ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."circle_id" = ?[0m  [["circle_id", 1]]
+  Rendered circles/orders/index.html.erb within layouts/application (4.7ms)
+Completed 200 OK in 43ms (Views: 39.1ms | ActiveRecord: 0.4ms)
+
+
+Started DELETE "/circles/1/orders/4" for 127.0.0.1 at 2017-04-19 20:15:23 -0400
+Processing by Circles::OrdersController#destroy as HTML
+  Parameters: {"authenticity_token"=>"WgZFU42XLAGq53J6eGW8XDdGCOALH0moZBF/wnxrp/pckP+XcCsAkn6oZFpBuq06gYd30on+OtRCF3NCiHVAkA==", "circle_id"=>"1", "id"=>"4"}
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCircle Load (0.1ms)[0m  [1m[34mSELECT  "circles".* FROM "circles" WHERE "circles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.3ms)[0m  [1m[31mDELETE FROM "orders" WHERE "orders"."id" = ?[0m  [["id", 4]]
+  [1m[35m (119.1ms)[0m  [1m[36mcommit transaction[0m
+Completed 500 Internal Server Error in 255ms (ActiveRecord: 120.8ms)
+
+
+  
+NameError (undefined local variable or method `orders_url' for #<Circles::OrdersController:0x007fab623d7858>
+Did you mean?  order_params):
+  
+app/controllers/circles/orders_controller.rb:66:in `block (2 levels) in destroy'
+app/controllers/circles/orders_controller.rb:65:in `destroy'
+  Rendering /var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (4.8ms)
+  Rendering /var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.0ms)
+  Rendering /var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (76.5ms)
+Started DELETE "/circles/1/orders/4" for 127.0.0.1 at 2017-04-19 20:15:57 -0400
+DEPRECATION WARNING: before_filter is deprecated and will be removed in Rails 5.1. Use before_action instead. (called from <class:OrdersController> at /home/ttkim/Desktop/KarmaWeb/app/controllers/circles/orders_controller.rb:5)
+Processing by Circles::OrdersController#destroy as HTML
+  Parameters: {"authenticity_token"=>"WgZFU42XLAGq53J6eGW8XDdGCOALH0moZBF/wnxrp/pckP+XcCsAkn6oZFpBuq06gYd30on+OtRCF3NCiHVAkA==", "circle_id"=>"1", "id"=>"4"}
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+Completed 404 Not Found in 7ms (ActiveRecord: 1.0ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Order with 'id'=4):
+  
+app/controllers/circles/orders_controller.rb:74:in `set_order'
+  Rendering /var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (5.0ms)
+  Rendering /var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.7ms)
+  Rendering /var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (23.4ms)
+Started DELETE "/circles/1/orders/4" for 127.0.0.1 at 2017-04-19 20:16:40 -0400
+DEPRECATION WARNING: before_filter is deprecated and will be removed in Rails 5.1. Use before_action instead. (called from <class:OrdersController> at /home/ttkim/Desktop/KarmaWeb/app/controllers/circles/orders_controller.rb:5)
+Processing by Circles::OrdersController#destroy as HTML
+  Parameters: {"authenticity_token"=>"WgZFU42XLAGq53J6eGW8XDdGCOALH0moZBF/wnxrp/pckP+XcCsAkn6oZFpBuq06gYd30on+OtRCF3NCiHVAkA==", "circle_id"=>"1", "id"=>"4"}
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms)
+
+
+  
+ArgumentError (The method .order() must contain arguments.):
+  
+app/controllers/circles/orders_controller.rb:74:in `set_order'
+  Rendering /var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (4.3ms)
+  Rendering /var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.9ms)
+  Rendering /var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.8ms)
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (26.0ms)
+Started GET "/circles/1/orders" for 127.0.0.1 at 2017-04-19 20:16:43 -0400
+Processing by Circles::OrdersController#index as HTML
+  Parameters: {"circle_id"=>"1"}
+  [1m[36mCircle Load (0.2ms)[0m  [1m[34mSELECT  "circles".* FROM "circles" WHERE "circles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering circles/orders/index.html.erb within layouts/application
+  [1m[36mOrder Load (0.3ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."circle_id" = ?[0m  [["circle_id", 1]]
+  Rendered circles/orders/index.html.erb within layouts/application (20.5ms)
+Completed 200 OK in 86ms (Views: 63.0ms | ActiveRecord: 3.3ms)
+
+
+Started DELETE "/circles/1/orders/1" for 127.0.0.1 at 2017-04-19 20:16:46 -0400
+Processing by Circles::OrdersController#destroy as HTML
+  Parameters: {"authenticity_token"=>"tL96TJB50jl/2UTSizpEm/zXmC57ccFPHCP8jpl5M8SyKcCIbcX+qquWUvKy5VX9ShbnHPmQsjM6JfAObWfUrg==", "circle_id"=>"1", "id"=>"1"}
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms)
+
+
+  
+ArgumentError (The method .order() must contain arguments.):
+  
+app/controllers/circles/orders_controller.rb:74:in `set_order'
+  Rendering /var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (6.8ms)
+  Rendering /var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.7ms)
+  Rendering /var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.5ms)
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (34.9ms)
+Started GET "/circles/1/orders" for 127.0.0.1 at 2017-04-19 20:16:56 -0400
+DEPRECATION WARNING: before_filter is deprecated and will be removed in Rails 5.1. Use before_action instead. (called from <class:OrdersController> at /home/ttkim/Desktop/KarmaWeb/app/controllers/circles/orders_controller.rb:5)
+Processing by Circles::OrdersController#index as HTML
+  Parameters: {"circle_id"=>"1"}
+  [1m[36mCircle Load (0.3ms)[0m  [1m[34mSELECT  "circles".* FROM "circles" WHERE "circles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering circles/orders/index.html.erb within layouts/application
+  [1m[36mOrder Load (0.3ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."circle_id" = ?[0m  [["circle_id", 1]]
+  Rendered circles/orders/index.html.erb within layouts/application (27.6ms)
+Completed 200 OK in 101ms (Views: 73.1ms | ActiveRecord: 2.6ms)
+
+
+Started DELETE "/circles/1/orders/1" for 127.0.0.1 at 2017-04-19 20:16:59 -0400
+Processing by Circles::OrdersController#destroy as HTML
+  Parameters: {"authenticity_token"=>"6yA49rfV/WvKtf0dnwTriDVXwiaOVAZwdwT1p4aGMubttoIySmnR+B766z2m2/rug5a9FAy1dQxRAvkncpjVjA==", "circle_id"=>"1", "id"=>"1"}
+Completed 500 Internal Server Error in 16ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `orders' for #<Class:0x007fab688c2ee8>
+Did you mean?  order):
+  
+app/controllers/circles/orders_controller.rb:74:in `set_order'
+  Rendering /var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (4.4ms)
+  Rendering /var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.6ms)
+  Rendering /var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (26.3ms)
+Started DELETE "/circles/1/orders/1" for 127.0.0.1 at 2017-04-19 20:17:44 -0400
+DEPRECATION WARNING: before_filter is deprecated and will be removed in Rails 5.1. Use before_action instead. (called from <class:OrdersController> at /home/ttkim/Desktop/KarmaWeb/app/controllers/circles/orders_controller.rb:5)
+Processing by Circles::OrdersController#destroy as HTML
+  Parameters: {"authenticity_token"=>"6yA49rfV/WvKtf0dnwTriDVXwiaOVAZwdwT1p4aGMubttoIySmnR+B766z2m2/rug5a9FAy1dQxRAvkncpjVjA==", "circle_id"=>"1", "id"=>"1"}
+  [1m[36mCircle Load (0.5ms)[0m  [1m[34mSELECT  "circles".* FROM "circles" WHERE "circles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 1.7ms)
+
+
+  
+NoMethodError (undefined method `destroy' for nil:NilClass):
+  
+app/controllers/circles/orders_controller.rb:64:in `destroy'
+  Rendering /var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (4.6ms)
+  Rendering /var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.2ms)
+  Rendering /var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.7ms)
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (25.4ms)
+Started DELETE "/circles/1/orders/1" for 127.0.0.1 at 2017-04-19 20:18:31 -0400
+DEPRECATION WARNING: before_filter is deprecated and will be removed in Rails 5.1. Use before_action instead. (called from <class:OrdersController> at /home/ttkim/Desktop/KarmaWeb/app/controllers/circles/orders_controller.rb:5)
+Processing by Circles::OrdersController#destroy as HTML
+  Parameters: {"authenticity_token"=>"6yA49rfV/WvKtf0dnwTriDVXwiaOVAZwdwT1p4aGMubttoIySmnR+B766z2m2/rug5a9FAy1dQxRAvkncpjVjA==", "circle_id"=>"1", "id"=>"1"}
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `orders' for nil:NilClass):
+  
+app/controllers/circles/orders_controller.rb:74:in `set_order'
+  Rendering /var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (5.2ms)
+  Rendering /var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.9ms)
+  Rendering /var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.9ms)
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (25.7ms)
+Started DELETE "/circles/1/orders/1" for 127.0.0.1 at 2017-04-19 20:18:48 -0400
+DEPRECATION WARNING: before_filter is deprecated and will be removed in Rails 5.1. Use before_action instead. (called from <class:OrdersController> at /home/ttkim/Desktop/KarmaWeb/app/controllers/circles/orders_controller.rb:4)
+Processing by Circles::OrdersController#destroy as HTML
+  Parameters: {"authenticity_token"=>"6yA49rfV/WvKtf0dnwTriDVXwiaOVAZwdwT1p4aGMubttoIySmnR+B766z2m2/rug5a9FAy1dQxRAvkncpjVjA==", "circle_id"=>"1", "id"=>"1"}
+  [1m[36mCircle Load (0.2ms)[0m  [1m[34mSELECT  "circles".* FROM "circles" WHERE "circles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mOrder Load (0.4ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."circle_id" = ? AND "orders"."id" = ? LIMIT ?[0m  [["circle_id", 1], ["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[31mDELETE FROM "orders" WHERE "orders"."id" = ?[0m  [["id", 1]]
+  [1m[35m (42.5ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/circles/1/orders
+Completed 302 Found in 117ms (ActiveRecord: 47.3ms)
+
+
+Started GET "/circles/1/orders" for 127.0.0.1 at 2017-04-19 20:18:48 -0400
+Processing by Circles::OrdersController#index as HTML
+  Parameters: {"circle_id"=>"1"}
+  [1m[36mCircle Load (0.2ms)[0m  [1m[34mSELECT  "circles".* FROM "circles" WHERE "circles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering circles/orders/index.html.erb within layouts/application
+  [1m[36mOrder Load (0.4ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."circle_id" = ?[0m  [["circle_id", 1]]
+  Rendered circles/orders/index.html.erb within layouts/application (5.4ms)
+Completed 200 OK in 56ms (Views: 51.0ms | ActiveRecord: 0.5ms)
+
+
+Started DELETE "/circles/1/orders/2" for 127.0.0.1 at 2017-04-19 20:18:53 -0400
+Processing by Circles::OrdersController#destroy as HTML
+  Parameters: {"authenticity_token"=>"See9xxjVZzlE4Rw1BCKuJk1t950uqJN/F3cZt2oST0ZPcQcD5WlLqpCuChU9/b9A+6yIr6xJ4AMxcRU3ngyoLA==", "circle_id"=>"1", "id"=>"2"}
+  [1m[36mCircle Load (0.1ms)[0m  [1m[34mSELECT  "circles".* FROM "circles" WHERE "circles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mOrder Load (0.3ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."circle_id" = ? AND "orders"."id" = ? LIMIT ?[0m  [["circle_id", 1], ["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[31mDELETE FROM "orders" WHERE "orders"."id" = ?[0m  [["id", 2]]
+  [1m[35m (89.8ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/circles/1/orders
+Completed 302 Found in 100ms (ActiveRecord: 91.2ms)
+
+
+Started GET "/circles/1/orders" for 127.0.0.1 at 2017-04-19 20:18:53 -0400
+Processing by Circles::OrdersController#index as HTML
+  Parameters: {"circle_id"=>"1"}
+  [1m[36mCircle Load (0.1ms)[0m  [1m[34mSELECT  "circles".* FROM "circles" WHERE "circles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering circles/orders/index.html.erb within layouts/application
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."circle_id" = ?[0m  [["circle_id", 1]]
+  Rendered circles/orders/index.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 40ms (Views: 35.3ms | ActiveRecord: 0.4ms)
+
+

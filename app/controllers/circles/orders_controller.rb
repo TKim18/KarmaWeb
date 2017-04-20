@@ -1,8 +1,8 @@
 require 'circles_controller.rb'
 
 class Circles::OrdersController < ApplicationController
-  before_action :set_order, only: [:show, :edit, :update, :destroy]
   before_filter :load_parent
+  before_action :set_order, only: [:show, :edit, :update, :destroy]
 
   # GET /orders
   # GET /orders.json
@@ -14,7 +14,7 @@ class Circles::OrdersController < ApplicationController
   # GET /orders/1.json
   def show
     id = params[:id]
-    @order = @circle.order.find(id)
+    @order = @circle.orders.find(id)
   end
 
   # GET /orders/new
@@ -49,8 +49,8 @@ class Circles::OrdersController < ApplicationController
   def update
     respond_to do |format|
       if @order.update(order_params)
-        format.html { redirect_to @order, notice: 'Order was successfully updated.' }
-        format.json { render :show, status: :ok, location: @order }
+        format.html { redirect_to @circle, notice: 'Order was successfully updated.' }
+        format.json { render :show, status: :ok, location: @circle }
       else
         format.html { render :edit }
         format.json { render json: @order.errors, status: :unprocessable_entity }
@@ -63,7 +63,7 @@ class Circles::OrdersController < ApplicationController
   def destroy
     @order.destroy
     respond_to do |format|
-      format.html { redirect_to orders_url, notice: 'Order was successfully destroyed.' }
+      format.html { redirect_to circle_orders_path, notice: 'Order was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
@@ -71,7 +71,7 @@ class Circles::OrdersController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_order
-      @order = Order.find(params[:id])
+      @order = @circle.orders.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
