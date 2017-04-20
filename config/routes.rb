@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
 
   resources :circles do
-  	resources :orders, controller: 'circles/orders'
+  	resources :orders, controller: 'circles/orders' do
+      collection { get :empty }
+    end
   end
 
   get 'auth/:provider/callback', to: 'sessions#create'

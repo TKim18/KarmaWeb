@@ -8,6 +8,12 @@ class Circles::OrdersController < ApplicationController
   # GET /orders.json
   def index
     @orders = @circle.orders.all
+    if @orders.empty?
+      redirect_to empty_circle_orders_path
+    end 
+  end
+
+  def empty
   end
 
   # GET /orders/1
