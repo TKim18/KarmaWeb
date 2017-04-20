@@ -1,5 +1,20 @@
 <h1>New Order</h1>
 
-<%= render 'form', order: @order %>
+<%= form_tag circle_orders_path, :method => :post do %>
+	<%= label :name, 'Item Name' %>
+	<%= text_field_tag "order[name]" %>
+	<%= label :category, 'Category' %>
+	<%= text_field_tag "order[category]" %>
+	<%= label :fromLocation, 'Where do you want food from?' %>
+	<%= text_field_tag "order[fromLocation]" %>
+	<%= label :toDestination, 'Where do you want your food delivered to?' %>
+	<%= text_field_tag "order[toDestination]" %>
+	<%= label :instant, 'Do you want your food now?' %>
+	<%= check_box_tag "order[instant]" %>
+	<%= label :cost, 'How much will your food cost' %>
+	<%= text_field_tag "order[cost]" %>
+	<br>
+	<%= submit_tag 'Put in your order!', class: 'button', data:{confirm: "Are you sure you want to place this order?"} %>
+<% end %>
 
-<%= link_to 'Back', orders_path %>
+<%= link_to 'Back', circle_orders_path(@circle) %>

@@ -32,9 +32,9 @@
         <td><%= order.instant %></td>
         <td><%= order.preOrderTime %></td>
         <td><%= order.cost %></td>
-        <td><%= link_to 'Show', order %></td>
-        <td><%= link_to 'Edit', edit_circle_order_path(order.circleId, order) %></td>
-        <td><%= link_to 'Destroy', order, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Show', circle_order_path(@circle, order) %></td>
+        <td><%= link_to 'Edit', edit_circle_order_path(@circle, order) %></td>
+        <td><%= link_to 'Destroy', circle_order_path(@circle, order), method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170418010516) do
+ActiveRecord::Schema.define(version: 20170418010545) do
 
   create_table "circles", force: :cascade do |t|
     t.datetime "created_at", null: false
@@ -56,6 +56,8 @@ ActiveRecord::Schema.define(version: 20170418010516) do
     t.decimal  "karmaPoints"
     t.string   "circleName"
     t.string   "homeLocation"
+    t.integer  "circle_id"
+    t.index ["circle_id"], name: "index_users_on_circle_id"
   end
 
 end

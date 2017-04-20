@@ -29,12 +29,14 @@ class Circles::OrdersController < ApplicationController
   # POST /orders
   # POST /orders.json
   def create
-    @order = Order.new(order_params)
-
+    @order = @circle.orders.new(order_params)
+    @order.circleName = @circle.name
+    @current_user = User.find_by id: session[:user_id]
+    @order.requestUserName = @current_user.name
     respond_to do |format|
       if @order.save
-        format.html { redirect_to @order, notice: 'Order was successfully created.' }
-        format.json { render :show, status: :created, location: @order }
+        format.html { redirect_to @circle, notice: 'Order was successfully created.' }
+        # format.json { render :show, status: :created, location: @order }
       else
         format.html { render :new }
         format.json { render json: @order.errors, status: :unprocessable_entity }
