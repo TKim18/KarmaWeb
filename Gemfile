@@ -14,10 +14,8 @@ group :development, :test do
   gem 'sqlite3'
 end
 
-group :production do
-  gem 'pg'
-  gem 'rails_12factor'
-end
+gem 'pg'
+
 # Use Puma as the app server
 gem 'puma', '~> 3.0'
 # Use SCSS for stylesheets
