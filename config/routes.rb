@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   get 'signout', to: 'sessions#destroy', as: 'signout'
 
   resources :sessions, only: [:create, :destroy]
+  get 'users/index'
   get 'login/index'
   root "login#index"
 

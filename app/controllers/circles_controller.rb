@@ -14,19 +14,26 @@ class CirclesController < ApplicationController
   def show
     id = params[:id]
     @circle = Circle.find(id)
+    @current_user = User.find_by id: session[:user_id]
+    @current_user.circleName = @circle.name
+    @current_user.circle_id = @circle.id
+    @current_user.save
     redirect_to circle_orders_path(id)   
   end
 
   def new
     @circle = Circle.new
-  end
+   end
 
   def edit
   end
 
   def create
     @circle = Circle.new(circle_params)
-
+    @current_user = User.find_by id: session[:user_id]
+    @current_user.circleName = @circle.name
+    @current_user.circle_id = @circle.id
+    @current_user.save
     respond_to do |format|
       if @circle.save
         format.html { redirect_to @circle, notice: 'Circle was successfully created.' }

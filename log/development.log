@@ -4871,3 +4871,1835 @@ Processing by Circles::OrdersController#index as HTML
 Completed 200 OK in 46ms (Views: 40.0ms | ActiveRecord: 0.7ms)
 
 
+Started GET "/" for 127.0.0.1 at 2017-04-20 19:17:04 -0400
+Started GET "/" for 127.0.0.1 at 2017-04-20 19:17:04 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by LoginController#index as HTML
+Processing by LoginController#index as HTML
+  Rendering login/index.html.erb within layouts/application
+  Rendering login/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered login/index.html.erb within layouts/application (1714.8ms)
+  Rendered login/index.html.erb within layouts/application (1712.8ms)
+Completed 200 OK in 1843ms (Views: 1774.5ms | ActiveRecord: 1.2ms)
+
+
+Completed 200 OK in 1847ms (Views: 1789.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/signout" for 127.0.0.1 at 2017-04-20 19:18:17 -0400
+Processing by SessionsController#destroy as HTML
+Redirected to http://localhost:3000/
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-04-20 19:18:17 -0400
+Processing by LoginController#index as HTML
+  Rendering login/index.html.erb within layouts/application
+  Rendered login/index.html.erb within layouts/application (27.6ms)
+Completed 200 OK in 38ms (Views: 37.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/auth/google_oauth2" for 127.0.0.1 at 2017-04-20 19:18:18 -0400
+Started GET "/auth/google_oauth2" for 127.0.0.1 at 2017-04-20 19:18:18 -0400
+Started GET "/auth/google_oauth2/callback?state=0d6201dec374043b9cdb520e130109bbb9a6d43574c89878&code=4/TVj1EENgUN9N0c3VFSPr6DcyqySB-5PlD-6aLR2ya8o" for 127.0.0.1 at 2017-04-20 19:18:19 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"state"=>"0d6201dec374043b9cdb520e130109bbb9a6d43574c89878", "code"=>"4/TVj1EENgUN9N0c3VFSPr6DcyqySB-5PlD-6aLR2ya8o", "provider"=>"google_oauth2"}
+DEPRECATION WARNING: env is deprecated and will be removed from Rails 5.1 (called from create at /home/ttkim/Desktop/KarmaWeb/app/controllers/sessions_controller.rb:3)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."provider" = ? AND "users"."uid" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["provider", "google_oauth2"], ["uid", "108513084629689564112"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.8ms)[0m  [1m[33mUPDATE "users" SET "oauth_token" = ?, "oauth_expires_at" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["oauth_token", "ya29.GlwyBBYiUiNMeiwUClqqu1Q5bNuwkmKi0FtjRblO8ExVtxW9u320bAzduFbzw__sqw7ixN96uRGJDFBnGl_1BuIgfcqB3HYHg5cV7cf4p1B7eCQ0Xtq_DPJ5Vgcntg"], ["oauth_expires_at", 2017-04-21 00:18:19 UTC], ["updated_at", 2017-04-20 23:18:19 UTC], ["id", 1]]
+  [1m[35m (119.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "users"."circleName" FROM "users" WHERE (uid = 1)[0m
+Redirected to http://localhost:3000/circles
+Completed 302 Found in 130ms (ActiveRecord: 121.9ms)
+
+
+Started GET "/circles" for 127.0.0.1 at 2017-04-20 19:18:19 -0400
+Processing by CirclesController#index as HTML
+  [1m[36mCircle Load (0.2ms)[0m  [1m[34mSELECT "circles".* FROM "circles"[0m
+  Rendering circles/index.html.erb within layouts/application
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "circles".* FROM "circles"[0m
+  Rendered circles/index.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 98ms (Views: 42.7ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/circles" for 127.0.0.1 at 2017-04-20 19:28:16 -0400
+Processing by CirclesController#index as HTML
+  [1m[36mCircle Load (0.4ms)[0m  [1m[34mSELECT "circles".* FROM "circles"[0m
+  Rendering circles/index.html.erb within layouts/application
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "circles".* FROM "circles"[0m
+  Rendered circles/index.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 162ms (Views: 153.3ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/circles/new" for 127.0.0.1 at 2017-04-20 19:28:18 -0400
+Processing by CirclesController#new as HTML
+  Rendering circles/new.html.erb within layouts/application
+  Rendered circles/_form.html.erb (131.8ms)
+  Rendered circles/new.html.erb within layouts/application (143.9ms)
+Completed 200 OK in 214ms (Views: 201.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/circles" for 127.0.0.1 at 2017-04-20 19:28:28 -0400
+Processing by CirclesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"keqG+iKhsNxAHrJzQT60rTsaBXk/M5NUbpehVYu/DO3VKBgXfC+HATDy6nUoJpB1vsezNSH5reVPIzfZr+VdYA==", "circle"=>{"name"=>"TheTimmies"}, "commit"=>"Create Circle"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 30ms (ActiveRecord: 0.7ms)
+
+
+  
+NoMethodError (undefined method `circleId=' for #<User:0x00000004525c20>
+Did you mean?  circle_id=
+               circle_id
+               circle_id?):
+  
+app/controllers/circles_controller.rb:31:in `create'
+  Rendering /var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (3.5ms)
+  Rendering /var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.3ms)
+  Rendering /var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (25.3ms)
+Started GET "/circles" for 127.0.0.1 at 2017-04-20 19:28:57 -0400
+Processing by CirclesController#index as HTML
+  [1m[36mCircle Load (0.8ms)[0m  [1m[34mSELECT "circles".* FROM "circles"[0m
+  Rendering circles/index.html.erb within layouts/application
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "circles".* FROM "circles"[0m
+  Rendered circles/index.html.erb within layouts/application (4.3ms)
+Completed 200 OK in 72ms (Views: 53.1ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/circles" for 127.0.0.1 at 2017-04-20 19:28:57 -0400
+Processing by CirclesController#index as HTML
+  [1m[36mCircle Load (0.2ms)[0m  [1m[34mSELECT "circles".* FROM "circles"[0m
+  Rendering circles/index.html.erb within layouts/application
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "circles".* FROM "circles"[0m
+  Rendered circles/index.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 46ms (Views: 43.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/circles/new" for 127.0.0.1 at 2017-04-20 19:28:59 -0400
+Processing by CirclesController#new as HTML
+  Rendering circles/new.html.erb within layouts/application
+  Rendered circles/_form.html.erb (3.2ms)
+  Rendered circles/new.html.erb within layouts/application (4.9ms)
+Completed 200 OK in 58ms (Views: 56.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/circles" for 127.0.0.1 at 2017-04-20 19:29:01 -0400
+Processing by CirclesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"va9Y0yv6CAse9PCodJrqft/BwHAlHUOzgSxr5b/1cBb5bcY+dXQ/1m4YqK4dgs6mWhx2PDvXfQKgmP1pm68hmw==", "circle"=>{"name"=>"Timmies"}, "commit"=>"Create Circle"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (22.5ms)[0m  [1m[32mINSERT INTO "circles" ("created_at", "updated_at", "name") VALUES (?, ?, ?)[0m  [["created_at", 2017-04-20 23:29:01 UTC], ["updated_at", 2017-04-20 23:29:01 UTC], ["name", "Timmies"]]
+  [1m[35m (185.0ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/circles/6
+Completed 302 Found in 230ms (ActiveRecord: 208.6ms)
+
+
+Started GET "/circles/6" for 127.0.0.1 at 2017-04-20 19:29:01 -0400
+Processing by CirclesController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mCircle Load (0.4ms)[0m  [1m[34mSELECT  "circles".* FROM "circles" WHERE "circles"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+Redirected to http://localhost:3000/circles/6/orders
+Completed 302 Found in 2ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/circles/6/orders" for 127.0.0.1 at 2017-04-20 19:29:01 -0400
+DEPRECATION WARNING: before_filter is deprecated and will be removed in Rails 5.1. Use before_action instead. (called from <class:OrdersController> at /home/ttkim/Desktop/KarmaWeb/app/controllers/circles/orders_controller.rb:4)
+Processing by Circles::OrdersController#index as HTML
+  Parameters: {"circle_id"=>"6"}
+  [1m[36mCircle Load (0.1ms)[0m  [1m[34mSELECT  "circles".* FROM "circles" WHERE "circles"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "orders" WHERE "orders"."circle_id" = ? AND "orders"."acceptUserName" = ?[0m  [["circle_id", 6], ["acceptUserName", "-1"]]
+Redirected to http://localhost:3000/circles/6/orders/empty
+Completed 302 Found in 99ms (ActiveRecord: 0.9ms)
+
+
+Started GET "/circles/6/orders/empty" for 127.0.0.1 at 2017-04-20 19:29:01 -0400
+Processing by Circles::OrdersController#empty as HTML
+  Parameters: {"circle_id"=>"6"}
+  [1m[36mCircle Load (0.4ms)[0m  [1m[34mSELECT  "circles".* FROM "circles" WHERE "circles"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering circles/orders/empty.html.erb within layouts/application
+  Rendered circles/orders/empty.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 48ms (Views: 31.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/circles" for 127.0.0.1 at 2017-04-20 19:29:08 -0400
+Processing by CirclesController#index as HTML
+  [1m[36mCircle Load (0.2ms)[0m  [1m[34mSELECT "circles".* FROM "circles"[0m
+  Rendering circles/index.html.erb within layouts/application
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "circles".* FROM "circles"[0m
+  Rendered circles/index.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 51ms (Views: 47.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/circles" for 127.0.0.1 at 2017-04-20 19:29:10 -0400
+Processing by CirclesController#index as HTML
+  [1m[36mCircle Load (0.2ms)[0m  [1m[34mSELECT "circles".* FROM "circles"[0m
+  Rendering circles/index.html.erb within layouts/application
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "circles".* FROM "circles"[0m
+  Rendered circles/index.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 33ms (Views: 31.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/circles" for 127.0.0.1 at 2017-04-20 19:41:07 -0400
+Processing by CirclesController#index as HTML
+  [1m[36mCircle Load (0.4ms)[0m  [1m[34mSELECT "circles".* FROM "circles"[0m
+  Rendering circles/index.html.erb within layouts/application
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "circles".* FROM "circles"[0m
+  Rendered circles/index.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 266ms (Views: 255.8ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/circles/new" for 127.0.0.1 at 2017-04-20 19:41:14 -0400
+Processing by CirclesController#new as HTML
+  Rendering circles/new.html.erb within layouts/application
+  Rendered circles/_form.html.erb (3.0ms)
+  Rendered circles/new.html.erb within layouts/application (8.9ms)
+Completed 200 OK in 66ms (Views: 64.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/circles" for 127.0.0.1 at 2017-04-20 19:41:20 -0400
+Processing by CirclesController#index as HTML
+  [1m[36mCircle Load (0.3ms)[0m  [1m[34mSELECT "circles".* FROM "circles"[0m
+  Rendering circles/index.html.erb within layouts/application
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "circles".* FROM "circles"[0m
+  Rendered circles/index.html.erb within layouts/application (4.5ms)
+Completed 200 OK in 72ms (Views: 68.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2017-04-20 19:46:49 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/users"):
+  
+actionpack (5.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.5.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.2) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.2) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.2) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.2) lib/rails/engine.rb:522:in `call'
+puma (3.8.2) lib/puma/configuration.rb:224:in `call'
+puma (3.8.2) lib/puma/server.rb:600:in `handle_request'
+puma (3.8.2) lib/puma/server.rb:435:in `process_client'
+puma (3.8.2) lib/puma/server.rb:299:in `block in run'
+puma (3.8.2) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  Rendering /var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering /var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.1ms)
+  Rendered collection of /var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/routes/_route.html.erb [25 times] (45.6ms)
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/routes/_table.html.erb (10.0ms)
+  Rendering /var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (203.0ms)
+Started GET "/users/index" for 127.0.0.1 at 2017-04-20 19:46:59 -0400
+Processing by UsersController#index as HTML
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.0ms)
+
+
+  
+NameError (uninitialized constant UsersController::Users):
+  
+app/controllers/users_controller.rb:3:in `index'
+  Rendering /var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (6.0ms)
+  Rendering /var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.2ms)
+  Rendering /var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (31.2ms)
+Started GET "/users/index" for 127.0.0.1 at 2017-04-20 19:47:21 -0400
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (274.8ms)
+Completed 500 Internal Server Error in 281ms (ActiveRecord: 1.3ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `user' for #<#<Class:0x007f91402af3b8>:0x007f91402ae170>
+Did you mean?  @users):
+    22:   <tbody>
+    23:     <% @users.each do || %>
+    24:       <tr>
+    25:         <td><%= user.provider %></td>
+    26:         <td><%= user.uid %></td>
+    27:         <td><%= user.name %></td>
+    28:         <td><%= user.created_at %></td>
+  
+app/views/users/index.html.erb:25:in `block in _app_views_users_index_html_erb__2340476638653675864_70130911772200'
+app/views/users/index.html.erb:23:in `_app_views_users_index_html_erb__2340476638653675864_70130911772200'
+  Rendering /var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (9.9ms)
+  Rendering /var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.1ms)
+  Rendering /var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (35.7ms)
+Started GET "/users/index" for 127.0.0.1 at 2017-04-20 19:47:28 -0400
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 66ms (Views: 64.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/index" for 127.0.0.1 at 2017-04-20 19:48:40 -0400
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (23.7ms)
+Completed 200 OK in 71ms (Views: 64.8ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/users/index" for 127.0.0.1 at 2017-04-20 19:48:41 -0400
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 97ms (Views: 93.2ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-04-20 19:48:43 -0400
+Processing by LoginController#index as HTML
+  Rendering login/index.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered login/index.html.erb within layouts/application (91.7ms)
+Completed 200 OK in 121ms (Views: 117.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/signout" for 127.0.0.1 at 2017-04-20 19:48:44 -0400
+Processing by SessionsController#destroy as HTML
+Redirected to http://localhost:3000/
+Completed 302 Found in 3ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-04-20 19:48:44 -0400
+Processing by LoginController#index as HTML
+  Rendering login/index.html.erb within layouts/application
+  Rendered login/index.html.erb within layouts/application (94.0ms)
+Completed 200 OK in 130ms (Views: 127.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/auth/google_oauth2" for 127.0.0.1 at 2017-04-20 19:48:46 -0400
+Started GET "/auth/google_oauth2" for 127.0.0.1 at 2017-04-20 19:48:46 -0400
+Started GET "/auth/google_oauth2/callback?state=fab091dc75ad9efb7359c9dca9ea6495ff0c50730ef7c5ba&code=4/K8ChhrAfsYc_8Qt_SUyzHT1hfIvm0g1YkIh_bDcLr0Q" for 127.0.0.1 at 2017-04-20 19:48:46 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"state"=>"fab091dc75ad9efb7359c9dca9ea6495ff0c50730ef7c5ba", "code"=>"4/K8ChhrAfsYc_8Qt_SUyzHT1hfIvm0g1YkIh_bDcLr0Q", "provider"=>"google_oauth2"}
+DEPRECATION WARNING: env is deprecated and will be removed from Rails 5.1 (called from create at /home/ttkim/Desktop/KarmaWeb/app/controllers/sessions_controller.rb:3)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."provider" = ? AND "users"."uid" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["provider", "google_oauth2"], ["uid", "108513084629689564112"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (2.0ms)[0m  [1m[33mUPDATE "users" SET "oauth_token" = ?, "oauth_expires_at" = ?, "circle_id" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["oauth_token", "ya29.GlwyBHCOEW7xOJTU5TCffUTHG45jwVWT340kjq15YDjjNK69Pwa3kScb0RHQFLuLp0hKGCBP7lQSyJ50shFJKihCBnRVrBfTUkI-9lmrrgqTdC4PHyyE0Q0eEjWs9w"], ["oauth_expires_at", 2017-04-21 00:48:47 UTC], ["circle_id", -1], ["updated_at", 2017-04-20 23:48:47 UTC], ["id", 1]]
+  [1m[35m (131.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://localhost:3000/circles
+Completed 302 Found in 156ms (ActiveRecord: 134.4ms)
+
+
+Started GET "/circles" for 127.0.0.1 at 2017-04-20 19:48:47 -0400
+Processing by CirclesController#index as HTML
+  [1m[36mCircle Load (0.5ms)[0m  [1m[34mSELECT "circles".* FROM "circles"[0m
+  Rendering circles/index.html.erb within layouts/application
+  Rendered circles/index.html.erb within layouts/application (6.6ms)
+Completed 500 Internal Server Error in 38ms (ActiveRecord: 2.2ms)
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+     6: <%= submit_tag 'Search', class: 'button' %>
+     7: <% end %>
+     8: 
+     9: <% @circles.each do |circle| %>
+    10: 	<%= link_to circle.name, circle %>
+    11: <% end %>
+    12: 
+  
+app/views/circles/index.html.erb:9:in `_app_views_circles_index_html_erb__3439456591587354822_70130827449280'
+  Rendering /var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (12.7ms)
+  Rendering /var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.9ms)
+  Rendering /var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.3ms)
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (55.5ms)
+Started GET "/circles" for 127.0.0.1 at 2017-04-20 19:49:04 -0400
+Processing by CirclesController#index as HTML
+  [1m[36mCircle Load (0.5ms)[0m  [1m[34mSELECT "circles".* FROM "circles"[0m
+  Rendering circles/index.html.erb within layouts/application
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "circles".* FROM "circles"[0m
+  Rendered circles/index.html.erb within layouts/application (4.7ms)
+Completed 200 OK in 66ms (Views: 53.6ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/circles/6" for 127.0.0.1 at 2017-04-20 19:49:08 -0400
+Processing by CirclesController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mCircle Load (0.2ms)[0m  [1m[34mSELECT  "circles".* FROM "circles" WHERE "circles"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+Redirected to http://localhost:3000/circles/6/orders
+Completed 302 Found in 3ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/circles/6/orders" for 127.0.0.1 at 2017-04-20 19:49:08 -0400
+DEPRECATION WARNING: before_filter is deprecated and will be removed in Rails 5.1. Use before_action instead. (called from <class:OrdersController> at /home/ttkim/Desktop/KarmaWeb/app/controllers/circles/orders_controller.rb:4)
+Processing by Circles::OrdersController#index as HTML
+  Parameters: {"circle_id"=>"6"}
+  [1m[36mCircle Load (0.1ms)[0m  [1m[34mSELECT  "circles".* FROM "circles" WHERE "circles"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "orders" WHERE "orders"."circle_id" = ? AND "orders"."acceptUserName" = ?[0m  [["circle_id", 6], ["acceptUserName", "-1"]]
+Redirected to http://localhost:3000/circles/6/orders/empty
+Completed 302 Found in 14ms (ActiveRecord: 0.9ms)
+
+
+Started GET "/circles/6/orders/empty" for 127.0.0.1 at 2017-04-20 19:49:08 -0400
+Processing by Circles::OrdersController#empty as HTML
+  Parameters: {"circle_id"=>"6"}
+  [1m[36mCircle Load (0.2ms)[0m  [1m[34mSELECT  "circles".* FROM "circles" WHERE "circles"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering circles/orders/empty.html.erb within layouts/application
+  Rendered circles/orders/empty.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 34ms (Views: 31.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/index" for 127.0.0.1 at 2017-04-20 19:50:24 -0400
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (14.8ms)
+Completed 200 OK in 58ms (Views: 51.1ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-04-20 19:50:56 -0400
+Processing by LoginController#index as HTML
+  Rendering login/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered login/index.html.erb within layouts/application (41.6ms)
+Completed 200 OK in 58ms (Views: 55.7ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/signout" for 127.0.0.1 at 2017-04-20 19:50:57 -0400
+Processing by SessionsController#destroy as HTML
+Redirected to http://localhost:3000/
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-04-20 19:50:57 -0400
+Processing by LoginController#index as HTML
+  Rendering login/index.html.erb within layouts/application
+  Rendered login/index.html.erb within layouts/application (52.9ms)
+Completed 200 OK in 77ms (Views: 73.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/auth/google_oauth2" for 127.0.0.1 at 2017-04-20 19:50:58 -0400
+Started GET "/auth/google_oauth2" for 127.0.0.1 at 2017-04-20 19:50:58 -0400
+Started GET "/auth/google_oauth2/callback?state=eb962bf9992eab98679c381b0b3af4bdeffd4b7659fc98aa&code=4/qNmCLuW6hcG6t8PNI8YEcojBF74PY0HB-4JCLvrGvS8" for 127.0.0.1 at 2017-04-20 19:50:58 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"state"=>"eb962bf9992eab98679c381b0b3af4bdeffd4b7659fc98aa", "code"=>"4/qNmCLuW6hcG6t8PNI8YEcojBF74PY0HB-4JCLvrGvS8", "provider"=>"google_oauth2"}
+DEPRECATION WARNING: env is deprecated and will be removed from Rails 5.1 (called from create at /home/ttkim/Desktop/KarmaWeb/app/controllers/sessions_controller.rb:3)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."provider" = ? AND "users"."uid" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["provider", "google_oauth2"], ["uid", "108513084629689564112"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.5ms)[0m  [1m[33mUPDATE "users" SET "oauth_token" = ?, "oauth_expires_at" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["oauth_token", "ya29.GlwyBFOV-kZ0FQmpbI-IIqhslCbkCoTYCsm-tEY1y9swkxulrS4tcx-26furIzPu06djbk_jwLVyJdIWLyOuYfTD4sL1otlAXYnZ_tS8gPJ2fW4oRaVBVBFmNLncXQ"], ["oauth_expires_at", 2017-04-21 00:50:58 UTC], ["updated_at", 2017-04-20 23:50:59 UTC], ["id", 1]]
+  [1m[35m (81.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://localhost:3000/circles
+Completed 302 Found in 93ms (ActiveRecord: 83.8ms)
+
+
+Started GET "/circles" for 127.0.0.1 at 2017-04-20 19:50:59 -0400
+Processing by CirclesController#index as HTML
+  [1m[36mCircle Load (0.2ms)[0m  [1m[34mSELECT "circles".* FROM "circles"[0m
+  Rendering circles/index.html.erb within layouts/application
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "circles".* FROM "circles"[0m
+  Rendered circles/index.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 64ms (Views: 50.5ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-04-20 19:51:03 -0400
+Processing by LoginController#index as HTML
+  Rendering login/index.html.erb within layouts/application
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered login/index.html.erb within layouts/application (42.7ms)
+Completed 200 OK in 62ms (Views: 59.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/users/index" for 127.0.0.1 at 2017-04-20 19:51:07 -0400
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (4.6ms)
+Completed 200 OK in 97ms (Views: 94.0ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/circles/1" for 127.0.0.1 at 2017-04-20 19:51:23 -0400
+Processing by CirclesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCircle Load (0.3ms)[0m  [1m[34mSELECT  "circles".* FROM "circles" WHERE "circles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://localhost:3000/circles/1/orders
+Completed 302 Found in 4ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/circles/1/orders" for 127.0.0.1 at 2017-04-20 19:51:23 -0400
+DEPRECATION WARNING: before_filter is deprecated and will be removed in Rails 5.1. Use before_action instead. (called from <class:OrdersController> at /home/ttkim/Desktop/KarmaWeb/app/controllers/circles/orders_controller.rb:4)
+Processing by Circles::OrdersController#index as HTML
+  Parameters: {"circle_id"=>"1"}
+  [1m[36mCircle Load (0.7ms)[0m  [1m[34mSELECT  "circles".* FROM "circles" WHERE "circles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "orders" WHERE "orders"."circle_id" = ? AND "orders"."acceptUserName" = ?[0m  [["circle_id", 1], ["acceptUserName", "-1"]]
+Redirected to http://localhost:3000/circles/1/orders/empty
+Completed 302 Found in 17ms (ActiveRecord: 1.6ms)
+
+
+Started GET "/circles/1/orders/empty" for 127.0.0.1 at 2017-04-20 19:51:23 -0400
+Processing by Circles::OrdersController#empty as HTML
+  Parameters: {"circle_id"=>"1"}
+  [1m[36mCircle Load (0.5ms)[0m  [1m[34mSELECT  "circles".* FROM "circles" WHERE "circles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering circles/orders/empty.html.erb within layouts/application
+  Rendered circles/orders/empty.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 42ms (Views: 39.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/circles/2" for 127.0.0.1 at 2017-04-20 19:51:25 -0400
+Processing by CirclesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mCircle Load (0.2ms)[0m  [1m[34mSELECT  "circles".* FROM "circles" WHERE "circles"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+Redirected to http://localhost:3000/circles/2/orders
+Completed 302 Found in 2ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/circles/2/orders" for 127.0.0.1 at 2017-04-20 19:51:25 -0400
+Processing by Circles::OrdersController#index as HTML
+  Parameters: {"circle_id"=>"2"}
+  [1m[36mCircle Load (0.2ms)[0m  [1m[34mSELECT  "circles".* FROM "circles" WHERE "circles"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "orders" WHERE "orders"."circle_id" = ? AND "orders"."acceptUserName" = ?[0m  [["circle_id", 2], ["acceptUserName", "-1"]]
+  Rendering circles/orders/index.html.erb within layouts/application
+  [1m[36mOrder Load (0.3ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."circle_id" = ? AND "orders"."acceptUserName" = ?[0m  [["circle_id", 2], ["acceptUserName", "-1"]]
+  Rendered circles/orders/index.html.erb within layouts/application (70.2ms)
+Completed 200 OK in 120ms (Views: 114.2ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/circles/6" for 127.0.0.1 at 2017-04-20 19:51:28 -0400
+Processing by CirclesController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mCircle Load (0.1ms)[0m  [1m[34mSELECT  "circles".* FROM "circles" WHERE "circles"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+Redirected to http://localhost:3000/circles/6/orders
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/circles/6/orders" for 127.0.0.1 at 2017-04-20 19:51:28 -0400
+Processing by Circles::OrdersController#index as HTML
+  Parameters: {"circle_id"=>"6"}
+  [1m[36mCircle Load (0.2ms)[0m  [1m[34mSELECT  "circles".* FROM "circles" WHERE "circles"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "orders" WHERE "orders"."circle_id" = ? AND "orders"."acceptUserName" = ?[0m  [["circle_id", 6], ["acceptUserName", "-1"]]
+Redirected to http://localhost:3000/circles/6/orders/empty
+Completed 302 Found in 4ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/circles/6/orders/empty" for 127.0.0.1 at 2017-04-20 19:51:28 -0400
+Processing by Circles::OrdersController#empty as HTML
+  Parameters: {"circle_id"=>"6"}
+  [1m[36mCircle Load (0.2ms)[0m  [1m[34mSELECT  "circles".* FROM "circles" WHERE "circles"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering circles/orders/empty.html.erb within layouts/application
+  Rendered circles/orders/empty.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 46ms (Views: 41.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/circles/new" for 127.0.0.1 at 2017-04-20 19:51:39 -0400
+Processing by CirclesController#new as HTML
+  Rendering circles/new.html.erb within layouts/application
+  Rendered circles/_form.html.erb (4.8ms)
+  Rendered circles/new.html.erb within layouts/application (7.3ms)
+Completed 200 OK in 82ms (Views: 77.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/circles" for 127.0.0.1 at 2017-04-20 19:51:43 -0400
+Processing by CirclesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"zwaGv5iGgk+IIeEGVPzF6fnVu3lecp0AEtscIy3uPg2LxBhSxgi1kvjNuQA95OExfAgNNUC4o7Ezb4qvCbRvgA==", "circle"=>{"name"=>"New Circle~~"}, "commit"=>"Create Circle"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (3.0ms)[0m  [1m[32mINSERT INTO "circles" ("created_at", "updated_at", "name") VALUES (?, ?, ?)[0m  [["created_at", 2017-04-20 23:51:43 UTC], ["updated_at", 2017-04-20 23:51:43 UTC], ["name", "New Circle~~"]]
+  [1m[35m (150.7ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/circles/7
+Completed 302 Found in 167ms (ActiveRecord: 154.1ms)
+
+
+Started GET "/circles/7" for 127.0.0.1 at 2017-04-20 19:51:43 -0400
+Processing by CirclesController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mCircle Load (0.2ms)[0m  [1m[34mSELECT  "circles".* FROM "circles" WHERE "circles"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+Redirected to http://localhost:3000/circles/7/orders
+Completed 302 Found in 3ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/circles/7/orders" for 127.0.0.1 at 2017-04-20 19:51:43 -0400
+Processing by Circles::OrdersController#index as HTML
+  Parameters: {"circle_id"=>"7"}
+  [1m[36mCircle Load (0.2ms)[0m  [1m[34mSELECT  "circles".* FROM "circles" WHERE "circles"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "orders" WHERE "orders"."circle_id" = ? AND "orders"."acceptUserName" = ?[0m  [["circle_id", 7], ["acceptUserName", "-1"]]
+Redirected to http://localhost:3000/circles/7/orders/empty
+Completed 302 Found in 4ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/circles/7/orders/empty" for 127.0.0.1 at 2017-04-20 19:51:43 -0400
+Processing by Circles::OrdersController#empty as HTML
+  Parameters: {"circle_id"=>"7"}
+  [1m[36mCircle Load (0.2ms)[0m  [1m[34mSELECT  "circles".* FROM "circles" WHERE "circles"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  Rendering circles/orders/empty.html.erb within layouts/application
+  Rendered circles/orders/empty.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 44ms (Views: 41.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/index" for 127.0.0.1 at 2017-04-20 19:51:55 -0400
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 43ms (Views: 41.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/circles/7/orders/empty" for 127.0.0.1 at 2017-04-20 19:52:26 -0400
+DEPRECATION WARNING: before_filter is deprecated and will be removed in Rails 5.1. Use before_action instead. (called from <class:OrdersController> at /home/ttkim/Desktop/KarmaWeb/app/controllers/circles/orders_controller.rb:4)
+Processing by Circles::OrdersController#empty as HTML
+  Parameters: {"circle_id"=>"7"}
+  [1m[36mCircle Load (0.3ms)[0m  [1m[34mSELECT  "circles".* FROM "circles" WHERE "circles"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  Rendering circles/orders/empty.html.erb within layouts/application
+  Rendered circles/orders/empty.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 71ms (Views: 52.5ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/circles" for 127.0.0.1 at 2017-04-20 19:52:29 -0400
+Processing by CirclesController#index as HTML
+  [1m[36mCircle Load (0.3ms)[0m  [1m[34mSELECT "circles".* FROM "circles"[0m
+  Rendering circles/index.html.erb within layouts/application
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "circles".* FROM "circles"[0m
+  Rendered circles/index.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 68ms (Views: 62.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/circles" for 127.0.0.1 at 2017-04-20 19:52:30 -0400
+Processing by CirclesController#index as HTML
+  [1m[36mCircle Load (0.3ms)[0m  [1m[34mSELECT "circles".* FROM "circles"[0m
+  Rendering circles/index.html.erb within layouts/application
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "circles".* FROM "circles"[0m
+  Rendered circles/index.html.erb within layouts/application (4.6ms)
+Completed 200 OK in 61ms (Views: 58.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/index" for 127.0.0.1 at 2017-04-20 19:52:31 -0400
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (20.6ms)
+Completed 200 OK in 63ms (Views: 57.6ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/circles/new" for 127.0.0.1 at 2017-04-20 19:52:34 -0400
+Processing by CirclesController#new as HTML
+  Rendering circles/new.html.erb within layouts/application
+  Rendered circles/_form.html.erb (2.8ms)
+  Rendered circles/new.html.erb within layouts/application (4.4ms)
+Completed 200 OK in 45ms (Views: 43.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/circles" for 127.0.0.1 at 2017-04-20 19:52:38 -0400
+Processing by CirclesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"AyGL808BIF11NaTW2Pqt8GTxOZs9Bfd5I9rgqFWmGyBH4xUeEY8XgAXZ/NCx4oko4SyP1yPPycgCbnYkcfxKrQ==", "circle"=>{"name"=>"scic"}, "commit"=>"Create Circle"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (2.4ms)[0m  [1m[33mUPDATE "users" SET "circleName" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["circleName", "scic"], ["updated_at", 2017-04-20 23:52:38 UTC], ["id", 1]]
+  [1m[35m (225.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "circles" ("created_at", "updated_at", "name") VALUES (?, ?, ?)[0m  [["created_at", 2017-04-20 23:52:38 UTC], ["updated_at", 2017-04-20 23:52:38 UTC], ["name", "scic"]]
+  [1m[35m (63.4ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/circles/8
+Completed 302 Found in 301ms (ActiveRecord: 291.7ms)
+
+
+Started GET "/circles/8" for 127.0.0.1 at 2017-04-20 19:52:38 -0400
+Processing by CirclesController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mCircle Load (0.1ms)[0m  [1m[34mSELECT  "circles".* FROM "circles" WHERE "circles"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+Redirected to http://localhost:3000/circles/8/orders
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/circles/8/orders" for 127.0.0.1 at 2017-04-20 19:52:38 -0400
+Processing by Circles::OrdersController#index as HTML
+  Parameters: {"circle_id"=>"8"}
+  [1m[36mCircle Load (0.1ms)[0m  [1m[34mSELECT  "circles".* FROM "circles" WHERE "circles"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "orders" WHERE "orders"."circle_id" = ? AND "orders"."acceptUserName" = ?[0m  [["circle_id", 8], ["acceptUserName", "-1"]]
+Redirected to http://localhost:3000/circles/8/orders/empty
+Completed 302 Found in 8ms (ActiveRecord: 0.6ms)
+
+
+Started GET "/circles/8/orders/empty" for 127.0.0.1 at 2017-04-20 19:52:38 -0400
+Processing by Circles::OrdersController#empty as HTML
+  Parameters: {"circle_id"=>"8"}
+  [1m[36mCircle Load (0.5ms)[0m  [1m[34mSELECT  "circles".* FROM "circles" WHERE "circles"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  Rendering circles/orders/empty.html.erb within layouts/application
+  Rendered circles/orders/empty.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 33ms (Views: 30.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users/index" for 127.0.0.1 at 2017-04-20 19:52:40 -0400
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 31ms (Views: 28.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/circles/8/orders/empty" for 127.0.0.1 at 2017-04-20 19:57:13 -0400
+DEPRECATION WARNING: before_filter is deprecated and will be removed in Rails 5.1. Use before_action instead. (called from <class:OrdersController> at /home/ttkim/Desktop/KarmaWeb/app/controllers/circles/orders_controller.rb:4)
+Processing by Circles::OrdersController#empty as HTML
+  Parameters: {"circle_id"=>"8"}
+  [1m[36mCircle Load (0.3ms)[0m  [1m[34mSELECT  "circles".* FROM "circles" WHERE "circles"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  Rendering circles/orders/empty.html.erb within layouts/application
+  Rendered circles/orders/empty.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 94ms (Views: 74.1ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/circles" for 127.0.0.1 at 2017-04-20 19:57:16 -0400
+Processing by CirclesController#index as HTML
+  [1m[36mCircle Load (2.0ms)[0m  [1m[34mSELECT "circles".* FROM "circles"[0m
+  Rendering circles/index.html.erb within layouts/application
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "circles".* FROM "circles"[0m
+  Rendered circles/index.html.erb within layouts/application (6.2ms)
+Completed 200 OK in 97ms (Views: 88.9ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/signout" for 127.0.0.1 at 2017-04-20 19:57:19 -0400
+Processing by SessionsController#destroy as HTML
+Redirected to http://localhost:3000/
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-04-20 19:57:19 -0400
+Processing by LoginController#index as HTML
+  Rendering login/index.html.erb within layouts/application
+  Rendered login/index.html.erb within layouts/application (30.8ms)
+Completed 200 OK in 50ms (Views: 47.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/auth/google_oauth2" for 127.0.0.1 at 2017-04-20 19:57:20 -0400
+Started GET "/auth/google_oauth2" for 127.0.0.1 at 2017-04-20 19:57:20 -0400
+Started GET "/auth/google_oauth2/callback?state=c49a768e65bd001e08b416df39f230a3fb669a1e66a5ddaf&code=4/IMwldaMyPEEPJ0BcmWddl37Dofo4GcABG6BX5mlCCl0" for 127.0.0.1 at 2017-04-20 19:57:20 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"state"=>"c49a768e65bd001e08b416df39f230a3fb669a1e66a5ddaf", "code"=>"4/IMwldaMyPEEPJ0BcmWddl37Dofo4GcABG6BX5mlCCl0", "provider"=>"google_oauth2"}
+DEPRECATION WARNING: env is deprecated and will be removed from Rails 5.1 (called from create at /home/ttkim/Desktop/KarmaWeb/app/controllers/sessions_controller.rb:3)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."provider" = ? AND "users"."uid" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["provider", "google_oauth2"], ["uid", "108513084629689564112"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[33mUPDATE "users" SET "oauth_token" = ?, "oauth_expires_at" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["oauth_token", "ya29.GlwyBFCYNxQsMAV_JzDgv8c8BDiQPrCfzm3Ke26s3ZRuBODX0RS1TxoQUMdGvMYoZ0O0zQo1Bf3b9h1ekjaeQtqXP4nf0UwxtvTI2j_2vlxB_oufOJkdaMO1xUIaQw"], ["oauth_expires_at", 2017-04-21 00:57:20 UTC], ["updated_at", 2017-04-20 23:57:21 UTC], ["id", 1]]
+  [1m[35m (138.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCircle Load (0.7ms)[0m  [1m[34mSELECT  "circles".* FROM "circles" WHERE "circles"."circleName" = ? LIMIT ?[0m  [["circleName", "scic"], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 176ms (ActiveRecord: 142.3ms)
+
+
+  
+ActiveRecord::StatementInvalid (SQLite3::SQLException: no such column: circles.circleName: SELECT  "circles".* FROM "circles" WHERE "circles"."circleName" = ? LIMIT ?):
+  
+app/controllers/sessions_controller.rb:11:in `create'
+  Rendering /var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (6.7ms)
+  Rendering /var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.7ms)
+  Rendering /var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (39.9ms)
+Started GET "/auth/google_oauth2/callback?state=c49a768e65bd001e08b416df39f230a3fb669a1e66a5ddaf&code=4/IMwldaMyPEEPJ0BcmWddl37Dofo4GcABG6BX5mlCCl0" for 127.0.0.1 at 2017-04-20 19:57:48 -0400
+  
+OAuth2::Error (invalid_grant: Code was already redeemed.
+{
+  "error" : "invalid_grant",
+  "error_description" : "Code was already redeemed."
+}):
+  
+oauth2 (1.3.1) lib/oauth2/client.rb:119:in `request'
+oauth2 (1.3.1) lib/oauth2/client.rb:146:in `get_token'
+oauth2 (1.3.1) lib/oauth2/strategy/auth_code.rb:30:in `get_token'
+omniauth-oauth2 (1.3.1) lib/omniauth/strategies/oauth2.rb:93:in `build_access_token'
+omniauth-google-oauth2 (0.2.10) lib/omniauth/strategies/google_oauth2.rb:103:in `custom_build_access_token'
+omniauth-oauth2 (1.3.1) lib/omniauth/strategies/oauth2.rb:77:in `callback_phase'
+omniauth (1.6.1) lib/omniauth/strategy.rb:230:in `callback_call'
+omniauth (1.6.1) lib/omniauth/strategy.rb:187:in `call!'
+omniauth (1.6.1) lib/omniauth/strategy.rb:167:in `call'
+omniauth (1.6.1) lib/omniauth/builder.rb:63:in `call'
+rack (2.0.1) lib/rack/etag.rb:25:in `call'
+rack (2.0.1) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.1) lib/rack/head.rb:12:in `call'
+rack (2.0.1) lib/rack/session/abstract/id.rb:222:in `context'
+rack (2.0.1) lib/rack/session/abstract/id.rb:216:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+activerecord (5.0.2) lib/active_record/migration.rb:553:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/callbacks.rb:38:in `block in call'
+activesupport (5.0.2) lib/active_support/callbacks.rb:97:in `__run_callbacks__'
+activesupport (5.0.2) lib/active_support/callbacks.rb:750:in `_run_call_callbacks'
+activesupport (5.0.2) lib/active_support/callbacks.rb:90:in `run_callbacks'
+actionpack (5.0.2) lib/action_dispatch/middleware/callbacks.rb:36:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:49:in `call'
+web-console (3.5.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.2) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.2) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.2) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.2) lib/rails/engine.rb:522:in `call'
+puma (3.8.2) lib/puma/configuration.rb:224:in `call'
+puma (3.8.2) lib/puma/server.rb:600:in `handle_request'
+puma (3.8.2) lib/puma/server.rb:435:in `process_client'
+puma (3.8.2) lib/puma/server.rb:299:in `block in run'
+puma (3.8.2) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  Rendering /var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (7.3ms)
+  Rendering /var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.0ms)
+  Rendering /var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (3.1ms)
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (53.5ms)
+Started GET "/" for 127.0.0.1 at 2017-04-20 19:57:51 -0400
+Processing by LoginController#index as HTML
+  Rendering login/index.html.erb within layouts/application
+  Rendered login/index.html.erb within layouts/application (32.4ms)
+Completed 200 OK in 48ms (Views: 46.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/auth/google_oauth2" for 127.0.0.1 at 2017-04-20 19:57:52 -0400
+Started GET "/auth/google_oauth2" for 127.0.0.1 at 2017-04-20 19:57:52 -0400
+Started GET "/auth/google_oauth2/callback?state=5f88b901cd0c82fb4285dc51ebfc45387d4230acf3327507&code=4/V1WBmyFe70Cj7mM4F7zTQr4H7Q8EyKqsI9N6Un1-Mok" for 127.0.0.1 at 2017-04-20 19:57:52 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"state"=>"5f88b901cd0c82fb4285dc51ebfc45387d4230acf3327507", "code"=>"4/V1WBmyFe70Cj7mM4F7zTQr4H7Q8EyKqsI9N6Un1-Mok", "provider"=>"google_oauth2"}
+DEPRECATION WARNING: env is deprecated and will be removed from Rails 5.1 (called from create at /home/ttkim/Desktop/KarmaWeb/app/controllers/sessions_controller.rb:3)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."provider" = ? AND "users"."uid" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["provider", "google_oauth2"], ["uid", "108513084629689564112"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "users" SET "oauth_token" = ?, "oauth_expires_at" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["oauth_token", "ya29.GlwyBJ6T-vPQSbSZtZCum761Dj47rbWdnwtLke7OgJpNoSMH5oXRQ2S8NyRTHuNANJDq2VlYZ3Cte72yfyEwDmnEkriUWnkh4m7NoWRmuU5794GovHoKSFxLBwkTzA"], ["oauth_expires_at", 2017-04-21 00:57:52 UTC], ["updated_at", 2017-04-20 23:57:53 UTC], ["id", 1]]
+  [1m[35m (110.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCircle Load (0.5ms)[0m  [1m[34mSELECT  "circles".* FROM "circles" WHERE "circles"."name" = ? LIMIT ?[0m  [["name", "scic"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/circles/8/orders
+Completed 302 Found in 142ms (ActiveRecord: 113.1ms)
+
+
+Started GET "/circles/8/orders" for 127.0.0.1 at 2017-04-20 19:57:53 -0400
+DEPRECATION WARNING: before_filter is deprecated and will be removed in Rails 5.1. Use before_action instead. (called from <class:OrdersController> at /home/ttkim/Desktop/KarmaWeb/app/controllers/circles/orders_controller.rb:4)
+Processing by Circles::OrdersController#index as HTML
+  Parameters: {"circle_id"=>"8"}
+  [1m[36mCircle Load (0.2ms)[0m  [1m[34mSELECT  "circles".* FROM "circles" WHERE "circles"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "orders" WHERE "orders"."circle_id" = ? AND "orders"."acceptUserName" = ?[0m  [["circle_id", 8], ["acceptUserName", "-1"]]
+Redirected to http://localhost:3000/circles/8/orders/empty
+Completed 302 Found in 11ms (ActiveRecord: 0.8ms)
+
+
+Started GET "/circles/8/orders/empty" for 127.0.0.1 at 2017-04-20 19:57:53 -0400
+Processing by Circles::OrdersController#empty as HTML
+  Parameters: {"circle_id"=>"8"}
+  [1m[36mCircle Load (0.2ms)[0m  [1m[34mSELECT  "circles".* FROM "circles" WHERE "circles"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  Rendering circles/orders/empty.html.erb within layouts/application
+  Rendered circles/orders/empty.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 49ms (Views: 45.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/circles" for 127.0.0.1 at 2017-04-20 19:58:09 -0400
+Processing by CirclesController#index as HTML
+  [1m[36mCircle Load (0.7ms)[0m  [1m[34mSELECT "circles".* FROM "circles"[0m
+  Rendering circles/index.html.erb within layouts/application
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "circles".* FROM "circles"[0m
+  Rendered circles/index.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 36ms (Views: 32.5ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/circles" for 127.0.0.1 at 2017-04-20 20:00:27 -0400
+Processing by CirclesController#index as HTML
+  [1m[36mCircle Load (0.6ms)[0m  [1m[34mSELECT "circles".* FROM "circles"[0m
+  Rendering circles/index.html.erb within layouts/application
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "circles".* FROM "circles"[0m
+  Rendered circles/index.html.erb within layouts/application (4.7ms)
+Completed 200 OK in 83ms (Views: 64.7ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/circles/1" for 127.0.0.1 at 2017-04-20 20:00:30 -0400
+Processing by CirclesController#show as HTML
+  Parameters: {"id"=>"1"}
+Redirected to http://localhost:3000/circles/1/orders
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/circles/1/orders" for 127.0.0.1 at 2017-04-20 20:00:30 -0400
+DEPRECATION WARNING: before_filter is deprecated and will be removed in Rails 5.1. Use before_action instead. (called from <class:OrdersController> at /home/ttkim/Desktop/KarmaWeb/app/controllers/circles/orders_controller.rb:4)
+Processing by Circles::OrdersController#index as HTML
+  Parameters: {"circle_id"=>"1"}
+  [1m[36mCircle Load (0.3ms)[0m  [1m[34mSELECT  "circles".* FROM "circles" WHERE "circles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "orders" WHERE "orders"."circle_id" = ? AND "orders"."acceptUserName" = ?[0m  [["circle_id", 1], ["acceptUserName", "-1"]]
+Redirected to http://localhost:3000/circles/1/orders/empty
+Completed 302 Found in 19ms (ActiveRecord: 1.6ms)
+
+
+Started GET "/circles/1/orders/empty" for 127.0.0.1 at 2017-04-20 20:00:30 -0400
+Processing by Circles::OrdersController#empty as HTML
+  Parameters: {"circle_id"=>"1"}
+  [1m[36mCircle Load (0.3ms)[0m  [1m[34mSELECT  "circles".* FROM "circles" WHERE "circles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering circles/orders/empty.html.erb within layouts/application
+  Rendered circles/orders/empty.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 53ms (Views: 49.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/circles" for 127.0.0.1 at 2017-04-20 20:00:34 -0400
+Processing by CirclesController#index as HTML
+  [1m[36mCircle Load (0.6ms)[0m  [1m[34mSELECT "circles".* FROM "circles"[0m
+  Rendering circles/index.html.erb within layouts/application
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "circles".* FROM "circles"[0m
+  Rendered circles/index.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 78ms (Views: 58.9ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/circles/1" for 127.0.0.1 at 2017-04-20 20:00:35 -0400
+Processing by CirclesController#show as HTML
+  Parameters: {"id"=>"1"}
+Completed 406 Not Acceptable in 38ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::UnknownFormat (CirclesController#show is missing a template for this request format and variant.
+
+request.formats: ["text/html"]
+request.variant: []
+
+NOTE! For XHR/Ajax or API requests, this action would normally respond with 204 No Content: an empty white screen. Since you're loading it in a web browser, we assume that you expected to actually render a template, not nothing, so we're showing an error to be extra-clear. If you expect 204 No Content, carry on. That's what you'll get from an XHR or API request. Give it a shot.):
+  
+actionpack (5.0.2) lib/action_controller/metal/implicit_render.rb:56:in `default_render'
+actionpack (5.0.2) lib/action_controller/metal/basic_implicit_render.rb:4:in `block in send_action'
+actionpack (5.0.2) lib/action_controller/metal/basic_implicit_render.rb:4:in `tap'
+actionpack (5.0.2) lib/action_controller/metal/basic_implicit_render.rb:4:in `send_action'
+actionpack (5.0.2) lib/abstract_controller/base.rb:188:in `process_action'
+actionpack (5.0.2) lib/action_controller/metal/rendering.rb:30:in `process_action'
+actionpack (5.0.2) lib/abstract_controller/callbacks.rb:20:in `block in process_action'
+activesupport (5.0.2) lib/active_support/callbacks.rb:126:in `call'
+activesupport (5.0.2) lib/active_support/callbacks.rb:506:in `block (2 levels) in compile'
+activesupport (5.0.2) lib/active_support/callbacks.rb:455:in `call'
+activesupport (5.0.2) lib/active_support/callbacks.rb:101:in `__run_callbacks__'
+activesupport (5.0.2) lib/active_support/callbacks.rb:750:in `_run_process_action_callbacks'
+activesupport (5.0.2) lib/active_support/callbacks.rb:90:in `run_callbacks'
+actionpack (5.0.2) lib/abstract_controller/callbacks.rb:19:in `process_action'
+actionpack (5.0.2) lib/action_controller/metal/rescue.rb:20:in `process_action'
+actionpack (5.0.2) lib/action_controller/metal/instrumentation.rb:32:in `block in process_action'
+activesupport (5.0.2) lib/active_support/notifications.rb:164:in `block in instrument'
+activesupport (5.0.2) lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+activesupport (5.0.2) lib/active_support/notifications.rb:164:in `instrument'
+actionpack (5.0.2) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+actionpack (5.0.2) lib/action_controller/metal/params_wrapper.rb:248:in `process_action'
+activerecord (5.0.2) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+actionpack (5.0.2) lib/abstract_controller/base.rb:126:in `process'
+actionview (5.0.2) lib/action_view/rendering.rb:30:in `process'
+actionpack (5.0.2) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (5.0.2) lib/action_controller/metal.rb:262:in `dispatch'
+actionpack (5.0.2) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
+actionpack (5.0.2) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (5.0.2) lib/action_dispatch/journey/router.rb:39:in `block in serve'
+actionpack (5.0.2) lib/action_dispatch/journey/router.rb:26:in `each'
+actionpack (5.0.2) lib/action_dispatch/journey/router.rb:26:in `serve'
+actionpack (5.0.2) lib/action_dispatch/routing/route_set.rb:725:in `call'
+omniauth (1.6.1) lib/omniauth/strategy.rb:189:in `call!'
+omniauth (1.6.1) lib/omniauth/strategy.rb:167:in `call'
+omniauth (1.6.1) lib/omniauth/builder.rb:63:in `call'
+rack (2.0.1) lib/rack/etag.rb:25:in `call'
+rack (2.0.1) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.1) lib/rack/head.rb:12:in `call'
+rack (2.0.1) lib/rack/session/abstract/id.rb:222:in `context'
+rack (2.0.1) lib/rack/session/abstract/id.rb:216:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+activerecord (5.0.2) lib/active_record/migration.rb:553:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/callbacks.rb:38:in `block in call'
+activesupport (5.0.2) lib/active_support/callbacks.rb:97:in `__run_callbacks__'
+activesupport (5.0.2) lib/active_support/callbacks.rb:750:in `_run_call_callbacks'
+activesupport (5.0.2) lib/active_support/callbacks.rb:90:in `run_callbacks'
+actionpack (5.0.2) lib/action_dispatch/middleware/callbacks.rb:36:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:49:in `call'
+web-console (3.5.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.2) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.2) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.2) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.2) lib/rails/engine.rb:522:in `call'
+puma (3.8.2) lib/puma/configuration.rb:224:in `call'
+puma (3.8.2) lib/puma/server.rb:600:in `handle_request'
+puma (3.8.2) lib/puma/server.rb:435:in `process_client'
+puma (3.8.2) lib/puma/server.rb:299:in `block in run'
+puma (3.8.2) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  Rendering /var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (6.4ms)
+  Rendering /var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.3ms)
+  Rendering /var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.5ms)
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (41.0ms)
+Started GET "/circles" for 127.0.0.1 at 2017-04-20 20:00:41 -0400
+Processing by CirclesController#index as HTML
+  [1m[36mCircle Load (0.5ms)[0m  [1m[34mSELECT "circles".* FROM "circles"[0m
+  Rendering circles/index.html.erb within layouts/application
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "circles".* FROM "circles"[0m
+  Rendered circles/index.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 67ms (Views: 52.6ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/circles" for 127.0.0.1 at 2017-04-20 20:00:45 -0400
+Processing by CirclesController#index as HTML
+  [1m[36mCircle Load (0.5ms)[0m  [1m[34mSELECT "circles".* FROM "circles"[0m
+  Rendering circles/index.html.erb within layouts/application
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "circles".* FROM "circles"[0m
+  Rendered circles/index.html.erb within layouts/application (8.7ms)
+Completed 200 OK in 111ms (Views: 105.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users/index" for 127.0.0.1 at 2017-04-20 20:01:11 -0400
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (24.4ms)
+Completed 200 OK in 68ms (Views: 60.4ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/users/index" for 127.0.0.1 at 2017-04-20 20:02:17 -0400
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (17.6ms)
+Completed 200 OK in 66ms (Views: 60.3ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/circles" for 127.0.0.1 at 2017-04-20 20:02:19 -0400
+Processing by CirclesController#index as HTML
+  [1m[36mCircle Load (0.3ms)[0m  [1m[34mSELECT "circles".* FROM "circles"[0m
+  Rendering circles/index.html.erb within layouts/application
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "circles".* FROM "circles"[0m
+  Rendered circles/index.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 41ms (Views: 26.5ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/circles/1" for 127.0.0.1 at 2017-04-20 20:02:20 -0400
+Processing by CirclesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCircle Load (0.3ms)[0m  [1m[34mSELECT  "circles".* FROM "circles" WHERE "circles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://localhost:3000/circles/1/orders
+Completed 302 Found in 5ms (ActiveRecord: 0.6ms)
+
+
+Started GET "/circles/1/orders" for 127.0.0.1 at 2017-04-20 20:02:20 -0400
+DEPRECATION WARNING: before_filter is deprecated and will be removed in Rails 5.1. Use before_action instead. (called from <class:OrdersController> at /home/ttkim/Desktop/KarmaWeb/app/controllers/circles/orders_controller.rb:4)
+Processing by Circles::OrdersController#index as HTML
+  Parameters: {"circle_id"=>"1"}
+  [1m[36mCircle Load (0.1ms)[0m  [1m[34mSELECT  "circles".* FROM "circles" WHERE "circles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "orders" WHERE "orders"."circle_id" = ? AND "orders"."acceptUserName" = ?[0m  [["circle_id", 1], ["acceptUserName", "-1"]]
+Redirected to http://localhost:3000/circles/1/orders/empty
+Completed 302 Found in 11ms (ActiveRecord: 0.6ms)
+
+
+Started GET "/circles/1/orders/empty" for 127.0.0.1 at 2017-04-20 20:02:20 -0400
+Processing by Circles::OrdersController#empty as HTML
+  Parameters: {"circle_id"=>"1"}
+  [1m[36mCircle Load (0.2ms)[0m  [1m[34mSELECT  "circles".* FROM "circles" WHERE "circles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering circles/orders/empty.html.erb within layouts/application
+  Rendered circles/orders/empty.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 29ms (Views: 27.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/index" for 127.0.0.1 at 2017-04-20 20:02:22 -0400
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 81ms (Views: 78.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/auth/google_oauth2" for 127.0.0.1 at 2017-04-20 20:02:36 -0400
+Started GET "/auth/google_oauth2" for 127.0.0.1 at 2017-04-20 20:02:36 -0400
+Started GET "/auth/google_oauth2/callback?state=9984ffc1ef635610a7d8f7b46f61848d9743511af8a1fb2b&code=4/bhgxbRCn-F3b5WstMS-OJaZetKxYu-pLf1nJ5OOidas" for 127.0.0.1 at 2017-04-20 20:02:36 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"state"=>"9984ffc1ef635610a7d8f7b46f61848d9743511af8a1fb2b", "code"=>"4/bhgxbRCn-F3b5WstMS-OJaZetKxYu-pLf1nJ5OOidas", "provider"=>"google_oauth2"}
+DEPRECATION WARNING: env is deprecated and will be removed from Rails 5.1 (called from create at /home/ttkim/Desktop/KarmaWeb/app/controllers/sessions_controller.rb:3)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."provider" = ? AND "users"."uid" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["provider", "google_oauth2"], ["uid", "108513084629689564112"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (2.3ms)[0m  [1m[33mUPDATE "users" SET "oauth_token" = ?, "oauth_expires_at" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["oauth_token", "ya29.GlwzBO8E6JzZlrBk9seQCcESNByqqNWETmwImy9RF3uNyMtACZqt6xdoCsO2AV2l-LVjxxresLBk77v6QkB55a5BWMOXlb61DiPHWSZDvPWrWmv7OOAc2kMRu34lWQ"], ["oauth_expires_at", 2017-04-21 01:02:36 UTC], ["updated_at", 2017-04-21 00:02:37 UTC], ["id", 1]]
+  [1m[35m (157.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCircle Load (0.2ms)[0m  [1m[34mSELECT  "circles".* FROM "circles" WHERE "circles"."name" = ? LIMIT ?[0m  [["name", "scic"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/circles/8/orders
+Completed 302 Found in 210ms (ActiveRecord: 163.5ms)
+
+
+Started GET "/circles/8/orders" for 127.0.0.1 at 2017-04-20 20:02:37 -0400
+DEPRECATION WARNING: before_filter is deprecated and will be removed in Rails 5.1. Use before_action instead. (called from <class:OrdersController> at /home/ttkim/Desktop/KarmaWeb/app/controllers/circles/orders_controller.rb:4)
+Processing by Circles::OrdersController#index as HTML
+  Parameters: {"circle_id"=>"8"}
+  [1m[36mCircle Load (0.3ms)[0m  [1m[34mSELECT  "circles".* FROM "circles" WHERE "circles"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "orders" WHERE "orders"."circle_id" = ? AND "orders"."acceptUserName" = ?[0m  [["circle_id", 8], ["acceptUserName", "-1"]]
+Redirected to http://localhost:3000/circles/8/orders/empty
+Completed 302 Found in 15ms (ActiveRecord: 1.1ms)
+
+
+Started GET "/circles/8/orders/empty" for 127.0.0.1 at 2017-04-20 20:02:37 -0400
+Processing by Circles::OrdersController#empty as HTML
+  Parameters: {"circle_id"=>"8"}
+  [1m[36mCircle Load (0.3ms)[0m  [1m[34mSELECT  "circles".* FROM "circles" WHERE "circles"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  Rendering circles/orders/empty.html.erb within layouts/application
+  Rendered circles/orders/empty.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 54ms (Views: 51.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/circles" for 127.0.0.1 at 2017-04-20 20:02:41 -0400
+Processing by CirclesController#index as HTML
+  [1m[36mCircle Load (0.5ms)[0m  [1m[34mSELECT "circles".* FROM "circles"[0m
+  Rendering circles/index.html.erb within layouts/application
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "circles".* FROM "circles"[0m
+  Rendered circles/index.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 44ms (Views: 41.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/circles" for 127.0.0.1 at 2017-04-20 20:02:43 -0400
+Processing by CirclesController#index as HTML
+  [1m[36mCircle Load (1.0ms)[0m  [1m[34mSELECT "circles".* FROM "circles"[0m
+  Rendering circles/index.html.erb within layouts/application
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "circles".* FROM "circles"[0m
+  Rendered circles/index.html.erb within layouts/application (4.3ms)
+Completed 200 OK in 67ms (Views: 62.4ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/circles/1" for 127.0.0.1 at 2017-04-20 20:02:44 -0400
+Processing by CirclesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCircle Load (0.7ms)[0m  [1m[34mSELECT  "circles".* FROM "circles" WHERE "circles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[33mUPDATE "users" SET "circleName" = ?, "circle_id" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["circleName", "Brunch CLub"], ["circle_id", 1], ["updated_at", 2017-04-21 00:02:44 UTC], ["id", 1]]
+  [1m[35m (81.2ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/circles/1/orders
+Completed 302 Found in 93ms (ActiveRecord: 82.7ms)
+
+
+Started GET "/circles/1/orders" for 127.0.0.1 at 2017-04-20 20:02:44 -0400
+Processing by Circles::OrdersController#index as HTML
+  Parameters: {"circle_id"=>"1"}
+  [1m[36mCircle Load (0.2ms)[0m  [1m[34mSELECT  "circles".* FROM "circles" WHERE "circles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "orders" WHERE "orders"."circle_id" = ? AND "orders"."acceptUserName" = ?[0m  [["circle_id", 1], ["acceptUserName", "-1"]]
+Redirected to http://localhost:3000/circles/1/orders/empty
+Completed 302 Found in 6ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/circles/1/orders/empty" for 127.0.0.1 at 2017-04-20 20:02:44 -0400
+Processing by Circles::OrdersController#empty as HTML
+  Parameters: {"circle_id"=>"1"}
+  [1m[36mCircle Load (0.5ms)[0m  [1m[34mSELECT  "circles".* FROM "circles" WHERE "circles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering circles/orders/empty.html.erb within layouts/application
+  Rendered circles/orders/empty.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 54ms (Views: 51.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users/index" for 127.0.0.1 at 2017-04-20 20:02:52 -0400
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 53ms (Views: 50.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/circles/5" for 127.0.0.1 at 2017-04-20 20:03:08 -0400
+Processing by CirclesController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mCircle Load (0.3ms)[0m  [1m[34mSELECT  "circles".* FROM "circles" WHERE "circles"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (3.5ms)[0m  [1m[33mUPDATE "users" SET "circleName" = ?, "circle_id" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["circleName", "Tim"], ["circle_id", 5], ["updated_at", 2017-04-21 00:03:08 UTC], ["id", 1]]
+  [1m[35m (76.7ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/circles/5/orders
+Completed 302 Found in 91ms (ActiveRecord: 80.9ms)
+
+
+Started GET "/circles/5/orders" for 127.0.0.1 at 2017-04-20 20:03:08 -0400
+Processing by Circles::OrdersController#index as HTML
+  Parameters: {"circle_id"=>"5"}
+  [1m[36mCircle Load (0.3ms)[0m  [1m[34mSELECT  "circles".* FROM "circles" WHERE "circles"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "orders" WHERE "orders"."circle_id" = ? AND "orders"."acceptUserName" = ?[0m  [["circle_id", 5], ["acceptUserName", "-1"]]
+Redirected to http://localhost:3000/circles/5/orders/empty
+Completed 302 Found in 5ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/circles/5/orders/empty" for 127.0.0.1 at 2017-04-20 20:03:08 -0400
+Processing by Circles::OrdersController#empty as HTML
+  Parameters: {"circle_id"=>"5"}
+  [1m[36mCircle Load (0.2ms)[0m  [1m[34mSELECT  "circles".* FROM "circles" WHERE "circles"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering circles/orders/empty.html.erb within layouts/application
+  Rendered circles/orders/empty.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 43ms (Views: 40.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/index" for 127.0.0.1 at 2017-04-20 20:03:09 -0400
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 65ms (Views: 62.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/circles" for 127.0.0.1 at 2017-04-20 20:03:32 -0400
+Processing by CirclesController#index as HTML
+  [1m[36mCircle Load (0.4ms)[0m  [1m[34mSELECT "circles".* FROM "circles"[0m
+  Rendering circles/index.html.erb within layouts/application
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "circles".* FROM "circles"[0m
+  Rendered circles/index.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 64ms (Views: 53.8ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/users/index" for 127.0.0.1 at 2017-04-20 20:03:32 -0400
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (14.3ms)
+Completed 200 OK in 49ms (Views: 43.9ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/circles" for 127.0.0.1 at 2017-04-20 20:04:07 -0400
+Processing by CirclesController#index as HTML
+  [1m[36mCircle Load (0.2ms)[0m  [1m[34mSELECT "circles".* FROM "circles"[0m
+  Rendering circles/index.html.erb within layouts/application
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "circles".* FROM "circles"[0m
+  Rendered circles/index.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 40ms (Views: 37.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/circles/new" for 127.0.0.1 at 2017-04-20 20:04:25 -0400
+Processing by CirclesController#new as HTML
+  Rendering circles/new.html.erb within layouts/application
+  Rendered circles/_form.html.erb (6.6ms)
+  Rendered circles/new.html.erb within layouts/application (9.1ms)
+Completed 200 OK in 77ms (Views: 74.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/circles" for 127.0.0.1 at 2017-04-20 20:04:31 -0400
+Processing by CirclesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"+rbcFJyX601yR5pcKDPr1SB0caWH7GzFGF0zy1nz7/2+dEL5whnckAKrwlpBK88NpanH6ZkmUnQ56aVHfam+cA==", "circle"=>{"name"=>"Hope This Works"}, "commit"=>"Create Circle"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[33mUPDATE "users" SET "circleName" = ?, "circle_id" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["circleName", "Hope This Works"], ["circle_id", nil], ["updated_at", 2017-04-21 00:04:31 UTC], ["id", 1]]
+  [1m[35m (187.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.3ms)[0m  [1m[32mINSERT INTO "circles" ("created_at", "updated_at", "name") VALUES (?, ?, ?)[0m  [["created_at", 2017-04-21 00:04:31 UTC], ["updated_at", 2017-04-21 00:04:31 UTC], ["name", "Hope This Works"]]
+  [1m[35m (93.7ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/circles/9
+Completed 302 Found in 301ms (ActiveRecord: 284.0ms)
+
+
+Started GET "/circles/9" for 127.0.0.1 at 2017-04-20 20:04:31 -0400
+Processing by CirclesController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mCircle Load (0.3ms)[0m  [1m[34mSELECT  "circles".* FROM "circles" WHERE "circles"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.3ms)[0m  [1m[33mUPDATE "users" SET "circle_id" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["circle_id", 9], ["updated_at", 2017-04-21 00:04:31 UTC], ["id", 1]]
+  [1m[35m (110.6ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/circles/9/orders
+Completed 302 Found in 121ms (ActiveRecord: 112.4ms)
+
+
+Started GET "/circles/9/orders" for 127.0.0.1 at 2017-04-20 20:04:31 -0400
+DEPRECATION WARNING: before_filter is deprecated and will be removed in Rails 5.1. Use before_action instead. (called from <class:OrdersController> at /home/ttkim/Desktop/KarmaWeb/app/controllers/circles/orders_controller.rb:4)
+Processing by Circles::OrdersController#index as HTML
+  Parameters: {"circle_id"=>"9"}
+  [1m[36mCircle Load (0.2ms)[0m  [1m[34mSELECT  "circles".* FROM "circles" WHERE "circles"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "orders" WHERE "orders"."circle_id" = ? AND "orders"."acceptUserName" = ?[0m  [["circle_id", 9], ["acceptUserName", "-1"]]
+Redirected to http://localhost:3000/circles/9/orders/empty
+Completed 302 Found in 14ms (ActiveRecord: 1.0ms)
+
+
+Started GET "/circles/9/orders/empty" for 127.0.0.1 at 2017-04-20 20:04:31 -0400
+Processing by Circles::OrdersController#empty as HTML
+  Parameters: {"circle_id"=>"9"}
+  [1m[36mCircle Load (0.2ms)[0m  [1m[34mSELECT  "circles".* FROM "circles" WHERE "circles"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  Rendering circles/orders/empty.html.erb within layouts/application
+  Rendered circles/orders/empty.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 45ms (Views: 43.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/index" for 127.0.0.1 at 2017-04-20 20:04:33 -0400
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (5.5ms)
+Completed 200 OK in 59ms (Views: 55.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/circles/new" for 127.0.0.1 at 2017-04-20 20:05:54 -0400
+Processing by CirclesController#new as HTML
+  Rendering circles/new.html.erb within layouts/application
+  Rendered circles/_form.html.erb (2.3ms)
+  Rendered circles/new.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 42ms (Views: 33.6ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/circles" for 127.0.0.1 at 2017-04-20 20:05:58 -0400
+Processing by CirclesController#index as HTML
+  [1m[36mCircle Load (0.3ms)[0m  [1m[34mSELECT "circles".* FROM "circles"[0m
+  Rendering circles/index.html.erb within layouts/application
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "circles".* FROM "circles"[0m
+  Rendered circles/index.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 53ms (Views: 48.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/circles" for 127.0.0.1 at 2017-04-20 20:05:59 -0400
+Processing by CirclesController#index as HTML
+  [1m[36mCircle Load (0.4ms)[0m  [1m[34mSELECT "circles".* FROM "circles"[0m
+  Rendering circles/index.html.erb within layouts/application
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "circles".* FROM "circles"[0m
+  Rendered circles/index.html.erb within layouts/application (4.6ms)
+Completed 200 OK in 53ms (Views: 49.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users/index" for 127.0.0.1 at 2017-04-20 20:05:59 -0400
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (28.1ms)
+Completed 200 OK in 89ms (Views: 81.3ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/circles/3" for 127.0.0.1 at 2017-04-20 20:06:02 -0400
+Processing by CirclesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mCircle Load (0.2ms)[0m  [1m[34mSELECT  "circles".* FROM "circles" WHERE "circles"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "users" SET "circleName" = ?, "circle_id" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["circleName", "Church"], ["circle_id", 3], ["updated_at", 2017-04-21 00:06:02 UTC], ["id", 1]]
+  [1m[35m (107.3ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/circles/3/orders
+Completed 302 Found in 114ms (ActiveRecord: 108.1ms)
+
+
+Started GET "/circles/3/orders" for 127.0.0.1 at 2017-04-20 20:06:02 -0400
+DEPRECATION WARNING: before_filter is deprecated and will be removed in Rails 5.1. Use before_action instead. (called from <class:OrdersController> at /home/ttkim/Desktop/KarmaWeb/app/controllers/circles/orders_controller.rb:4)
+Processing by Circles::OrdersController#index as HTML
+  Parameters: {"circle_id"=>"3"}
+  [1m[36mCircle Load (0.1ms)[0m  [1m[34mSELECT  "circles".* FROM "circles" WHERE "circles"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "orders" WHERE "orders"."circle_id" = ? AND "orders"."acceptUserName" = ?[0m  [["circle_id", 3], ["acceptUserName", "-1"]]
+Redirected to http://localhost:3000/circles/3/orders/empty
+Completed 302 Found in 8ms (ActiveRecord: 0.6ms)
+
+
+Started GET "/circles/3/orders/empty" for 127.0.0.1 at 2017-04-20 20:06:02 -0400
+Processing by Circles::OrdersController#empty as HTML
+  Parameters: {"circle_id"=>"3"}
+  [1m[36mCircle Load (0.2ms)[0m  [1m[34mSELECT  "circles".* FROM "circles" WHERE "circles"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering circles/orders/empty.html.erb within layouts/application
+  Rendered circles/orders/empty.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 37ms (Views: 35.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/index" for 127.0.0.1 at 2017-04-20 20:06:05 -0400
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 38ms (Views: 36.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/circles/6" for 127.0.0.1 at 2017-04-20 20:06:09 -0400
+Processing by CirclesController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mCircle Load (0.1ms)[0m  [1m[34mSELECT  "circles".* FROM "circles" WHERE "circles"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "users" SET "circleName" = ?, "circle_id" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["circleName", "Timmies"], ["circle_id", 6], ["updated_at", 2017-04-21 00:06:09 UTC], ["id", 1]]
+  [1m[35m (95.8ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/circles/6/orders
+Completed 302 Found in 103ms (ActiveRecord: 96.4ms)
+
+
+Started GET "/circles/6/orders" for 127.0.0.1 at 2017-04-20 20:06:09 -0400
+Processing by Circles::OrdersController#index as HTML
+  Parameters: {"circle_id"=>"6"}
+  [1m[36mCircle Load (0.1ms)[0m  [1m[34mSELECT  "circles".* FROM "circles" WHERE "circles"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "orders" WHERE "orders"."circle_id" = ? AND "orders"."acceptUserName" = ?[0m  [["circle_id", 6], ["acceptUserName", "-1"]]
+Redirected to http://localhost:3000/circles/6/orders/empty
+Completed 302 Found in 4ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/circles/6/orders/empty" for 127.0.0.1 at 2017-04-20 20:06:09 -0400
+Processing by Circles::OrdersController#empty as HTML
+  Parameters: {"circle_id"=>"6"}
+  [1m[36mCircle Load (0.2ms)[0m  [1m[34mSELECT  "circles".* FROM "circles" WHERE "circles"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering circles/orders/empty.html.erb within layouts/application
+  Rendered circles/orders/empty.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 44ms (Views: 41.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/index" for 127.0.0.1 at 2017-04-20 20:06:10 -0400
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 42ms (Views: 40.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/circles/new" for 127.0.0.1 at 2017-04-20 20:06:14 -0400
+Processing by CirclesController#new as HTML
+  Rendering circles/new.html.erb within layouts/application
+  Rendered circles/_form.html.erb (4.0ms)
+  Rendered circles/new.html.erb within layouts/application (5.7ms)
+Completed 200 OK in 48ms (Views: 46.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/circles" for 127.0.0.1 at 2017-04-20 20:06:16 -0400
+Processing by CirclesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"mG1d6uWCh+vo5Qzd2F5k0iUAsNTUMXMAc0XFSob132Dcr8MHuwywNpgJVNuxRkAKoN0GmMr7TbFS8VPGoq+O7Q==", "circle"=>{"name"=>"Again"}, "commit"=>"Create Circle"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (6.0ms)[0m  [1m[33mUPDATE "users" SET "circleName" = ?, "circle_id" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["circleName", "Again"], ["circle_id", -1], ["updated_at", 2017-04-21 00:06:16 UTC], ["id", 1]]
+  [1m[35m (137.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "circles" ("created_at", "updated_at", "name") VALUES (?, ?, ?)[0m  [["created_at", 2017-04-21 00:06:16 UTC], ["updated_at", 2017-04-21 00:06:16 UTC], ["name", "Again"]]
+  [1m[35m (95.0ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/circles/10
+Completed 302 Found in 254ms (ActiveRecord: 239.4ms)
+
+
+Started GET "/circles/10" for 127.0.0.1 at 2017-04-20 20:06:16 -0400
+Processing by CirclesController#show as HTML
+  Parameters: {"id"=>"10"}
+  [1m[36mCircle Load (0.2ms)[0m  [1m[34mSELECT  "circles".* FROM "circles" WHERE "circles"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.6ms)[0m  [1m[33mUPDATE "users" SET "circle_id" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["circle_id", 10], ["updated_at", 2017-04-21 00:06:16 UTC], ["id", 1]]
+  [1m[35m (58.1ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/circles/10/orders
+Completed 302 Found in 70ms (ActiveRecord: 60.1ms)
+
+
+Started GET "/circles/10/orders" for 127.0.0.1 at 2017-04-20 20:06:16 -0400
+Processing by Circles::OrdersController#index as HTML
+  Parameters: {"circle_id"=>"10"}
+  [1m[36mCircle Load (0.2ms)[0m  [1m[34mSELECT  "circles".* FROM "circles" WHERE "circles"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "orders" WHERE "orders"."circle_id" = ? AND "orders"."acceptUserName" = ?[0m  [["circle_id", 10], ["acceptUserName", "-1"]]
+Redirected to http://localhost:3000/circles/10/orders/empty
+Completed 302 Found in 5ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/circles/10/orders/empty" for 127.0.0.1 at 2017-04-20 20:06:16 -0400
+Processing by Circles::OrdersController#empty as HTML
+  Parameters: {"circle_id"=>"10"}
+  [1m[36mCircle Load (0.3ms)[0m  [1m[34mSELECT  "circles".* FROM "circles" WHERE "circles"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  Rendering circles/orders/empty.html.erb within layouts/application
+  Rendered circles/orders/empty.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 78ms (Views: 75.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/index" for 127.0.0.1 at 2017-04-20 20:06:18 -0400
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (7.4ms)
+Completed 200 OK in 83ms (Views: 79.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/circles" for 127.0.0.1 at 2017-04-20 20:06:20 -0400
+Processing by CirclesController#index as HTML
+  [1m[36mCircle Load (0.3ms)[0m  [1m[34mSELECT "circles".* FROM "circles"[0m
+  Rendering circles/index.html.erb within layouts/application
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "circles".* FROM "circles"[0m
+  Rendered circles/index.html.erb within layouts/application (4.5ms)
+Completed 200 OK in 74ms (Views: 70.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-04-20 20:06:24 -0400
+Processing by LoginController#index as HTML
+  Rendering login/index.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered login/index.html.erb within layouts/application (40.7ms)
+Completed 200 OK in 58ms (Views: 56.6ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/signout" for 127.0.0.1 at 2017-04-20 20:06:26 -0400
+Processing by SessionsController#destroy as HTML
+Redirected to http://localhost:3000/
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-04-20 20:06:26 -0400
+Processing by LoginController#index as HTML
+  Rendering login/index.html.erb within layouts/application
+  Rendered login/index.html.erb within layouts/application (49.3ms)
+Completed 200 OK in 67ms (Views: 65.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/auth/google_oauth2" for 127.0.0.1 at 2017-04-20 20:06:27 -0400
+Started GET "/auth/google_oauth2" for 127.0.0.1 at 2017-04-20 20:06:27 -0400
+Started GET "/auth/google_oauth2/callback?state=8cf90b3064f67d7890bbb5e7798414eadc9ae4880a49d4aa&code=4/ijEWHOSYYJajO4LaD7coYFosc0wcqKiLHE5r0vyyWZQ" for 127.0.0.1 at 2017-04-20 20:06:27 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"state"=>"8cf90b3064f67d7890bbb5e7798414eadc9ae4880a49d4aa", "code"=>"4/ijEWHOSYYJajO4LaD7coYFosc0wcqKiLHE5r0vyyWZQ", "provider"=>"google_oauth2"}
+DEPRECATION WARNING: env is deprecated and will be removed from Rails 5.1 (called from create at /home/ttkim/Desktop/KarmaWeb/app/controllers/sessions_controller.rb:3)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."provider" = ? AND "users"."uid" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["provider", "google_oauth2"], ["uid", "108513084629689564112"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.5ms)[0m  [1m[33mUPDATE "users" SET "oauth_token" = ?, "oauth_expires_at" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["oauth_token", "ya29.GlwzBDq_HzWpI4xFTWGgWXKdpqmHJHdKQMKJEe75a7xQgvMsn5qbnM5qbVLkgYmyC38MwqDoclCcUe-dhV_5qVzk-wvg4WX0YUtcq_ZA-wYHEE85tS1nvceNxpky3g"], ["oauth_expires_at", 2017-04-21 01:06:27 UTC], ["updated_at", 2017-04-21 00:06:27 UTC], ["id", 1]]
+  [1m[35m (72.6ms)[0m  [1m[36mcommit transaction[0m
+Completed 500 Internal Server Error in 116ms (ActiveRecord: 74.5ms)
+
+
+  
+NoMethodError (undefined method `findCircleName' for #<Class:0x007f91490ffcf8>
+Did you mean?  find
+               findCircleId):
+  
+app/controllers/sessions_controller.rb:5:in `create'
+  Rendering /var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (6.8ms)
+  Rendering /var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.3ms)
+  Rendering /var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.0ms)
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (38.0ms)
+Started GET "/auth/google_oauth2/callback?state=8cf90b3064f67d7890bbb5e7798414eadc9ae4880a49d4aa&code=4/ijEWHOSYYJajO4LaD7coYFosc0wcqKiLHE5r0vyyWZQ" for 127.0.0.1 at 2017-04-20 20:06:40 -0400
+  
+OAuth2::Error (invalid_grant: Invalid code.
+{
+  "error" : "invalid_grant",
+  "error_description" : "Invalid code."
+}):
+  
+oauth2 (1.3.1) lib/oauth2/client.rb:119:in `request'
+oauth2 (1.3.1) lib/oauth2/client.rb:146:in `get_token'
+oauth2 (1.3.1) lib/oauth2/strategy/auth_code.rb:30:in `get_token'
+omniauth-oauth2 (1.3.1) lib/omniauth/strategies/oauth2.rb:93:in `build_access_token'
+omniauth-google-oauth2 (0.2.10) lib/omniauth/strategies/google_oauth2.rb:103:in `custom_build_access_token'
+omniauth-oauth2 (1.3.1) lib/omniauth/strategies/oauth2.rb:77:in `callback_phase'
+omniauth (1.6.1) lib/omniauth/strategy.rb:230:in `callback_call'
+omniauth (1.6.1) lib/omniauth/strategy.rb:187:in `call!'
+omniauth (1.6.1) lib/omniauth/strategy.rb:167:in `call'
+omniauth (1.6.1) lib/omniauth/builder.rb:63:in `call'
+rack (2.0.1) lib/rack/etag.rb:25:in `call'
+rack (2.0.1) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.1) lib/rack/head.rb:12:in `call'
+rack (2.0.1) lib/rack/session/abstract/id.rb:222:in `context'
+rack (2.0.1) lib/rack/session/abstract/id.rb:216:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+activerecord (5.0.2) lib/active_record/migration.rb:553:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/callbacks.rb:38:in `block in call'
+activesupport (5.0.2) lib/active_support/callbacks.rb:97:in `__run_callbacks__'
+activesupport (5.0.2) lib/active_support/callbacks.rb:750:in `_run_call_callbacks'
+activesupport (5.0.2) lib/active_support/callbacks.rb:90:in `run_callbacks'
+actionpack (5.0.2) lib/action_dispatch/middleware/callbacks.rb:36:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:49:in `call'
+web-console (3.5.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.2) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.2) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.2) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.2) lib/rails/engine.rb:522:in `call'
+puma (3.8.2) lib/puma/configuration.rb:224:in `call'
+puma (3.8.2) lib/puma/server.rb:600:in `handle_request'
+puma (3.8.2) lib/puma/server.rb:435:in `process_client'
+puma (3.8.2) lib/puma/server.rb:299:in `block in run'
+puma (3.8.2) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  Rendering /var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (9.9ms)
+  Rendering /var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (6.2ms)
+  Rendering /var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (3.1ms)
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (68.6ms)
+Started GET "/" for 127.0.0.1 at 2017-04-20 20:06:42 -0400
+Processing by LoginController#index as HTML
+  Rendering login/index.html.erb within layouts/application
+  Rendered login/index.html.erb within layouts/application (112.6ms)
+Completed 200 OK in 147ms (Views: 143.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/auth/google_oauth2" for 127.0.0.1 at 2017-04-20 20:06:43 -0400
+Started GET "/auth/google_oauth2" for 127.0.0.1 at 2017-04-20 20:06:44 -0400
+Started GET "/auth/google_oauth2/callback?state=92839224c09d5ad48a21b89491fa345fda8b08681fee5b19&code=4/s5mjlzArKM-oyq0MeDzPyWtOG8mZaUMAnPF-MWZbfEA" for 127.0.0.1 at 2017-04-20 20:06:44 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"state"=>"92839224c09d5ad48a21b89491fa345fda8b08681fee5b19", "code"=>"4/s5mjlzArKM-oyq0MeDzPyWtOG8mZaUMAnPF-MWZbfEA", "provider"=>"google_oauth2"}
+DEPRECATION WARNING: env is deprecated and will be removed from Rails 5.1 (called from create at /home/ttkim/Desktop/KarmaWeb/app/controllers/sessions_controller.rb:3)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."provider" = ? AND "users"."uid" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["provider", "google_oauth2"], ["uid", "108513084629689564112"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.8ms)[0m  [1m[33mUPDATE "users" SET "oauth_token" = ?, "oauth_expires_at" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["oauth_token", "ya29.GlwzBMoDfAusoo8ae6CoD0gL5A0XulUbooJqXwHIN5kAXyNTSdQ835-1HMmyNGSOscomy6vfkLd48iuNlypqT37_Vyto5cz_K2u5NmgvJC5qaUKcE0czHT3AiXdhSw"], ["oauth_expires_at", 2017-04-21 01:06:44 UTC], ["updated_at", 2017-04-21 00:06:44 UTC], ["id", 1]]
+  [1m[35m (87.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCircle Load (0.4ms)[0m  [1m[34mSELECT  "circles".* FROM "circles" WHERE "circles"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+Redirected to http://localhost:3000/circles/10/orders
+Completed 302 Found in 163ms (ActiveRecord: 94.0ms)
+
+
+Started GET "/circles/10/orders" for 127.0.0.1 at 2017-04-20 20:06:45 -0400
+DEPRECATION WARNING: before_filter is deprecated and will be removed in Rails 5.1. Use before_action instead. (called from <class:OrdersController> at /home/ttkim/Desktop/KarmaWeb/app/controllers/circles/orders_controller.rb:4)
+Processing by Circles::OrdersController#index as HTML
+  Parameters: {"circle_id"=>"10"}
+  [1m[36mCircle Load (0.2ms)[0m  [1m[34mSELECT  "circles".* FROM "circles" WHERE "circles"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "orders" WHERE "orders"."circle_id" = ? AND "orders"."acceptUserName" = ?[0m  [["circle_id", 10], ["acceptUserName", "-1"]]
+Redirected to http://localhost:3000/circles/10/orders/empty
+Completed 302 Found in 24ms (ActiveRecord: 1.4ms)
+
+
+Started GET "/circles/10/orders/empty" for 127.0.0.1 at 2017-04-20 20:06:45 -0400
+Processing by Circles::OrdersController#empty as HTML
+  Parameters: {"circle_id"=>"10"}
+  [1m[36mCircle Load (0.3ms)[0m  [1m[34mSELECT  "circles".* FROM "circles" WHERE "circles"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  Rendering circles/orders/empty.html.erb within layouts/application
+  Rendered circles/orders/empty.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 97ms (Views: 93.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-04-20 20:07:07 -0400
+Processing by LoginController#index as HTML
+  Rendering login/index.html.erb within layouts/application
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered login/index.html.erb within layouts/application (63.1ms)
+Completed 200 OK in 85ms (Views: 82.5ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/signout" for 127.0.0.1 at 2017-04-20 20:07:09 -0400
+Processing by SessionsController#destroy as HTML
+Redirected to http://localhost:3000/
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-04-20 20:07:09 -0400
+Processing by LoginController#index as HTML
+  Rendering login/index.html.erb within layouts/application
+  Rendered login/index.html.erb within layouts/application (56.2ms)
+Completed 200 OK in 79ms (Views: 76.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/auth/google_oauth2" for 127.0.0.1 at 2017-04-20 20:07:10 -0400
+Started GET "/auth/google_oauth2" for 127.0.0.1 at 2017-04-20 20:07:10 -0400
+Started GET "/auth/google_oauth2/callback?state=147a657f19a0fe5ed13b4d78ee4960ef673394b29b78d77b&code=4/0gQ9P4liZ4MGtFSIG4a4QTk1IIKtgwbNc-cf3xBzol0" for 127.0.0.1 at 2017-04-20 20:07:10 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"state"=>"147a657f19a0fe5ed13b4d78ee4960ef673394b29b78d77b", "code"=>"4/0gQ9P4liZ4MGtFSIG4a4QTk1IIKtgwbNc-cf3xBzol0", "provider"=>"google_oauth2"}
+DEPRECATION WARNING: env is deprecated and will be removed from Rails 5.1 (called from create at /home/ttkim/Desktop/KarmaWeb/app/controllers/sessions_controller.rb:3)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."provider" = ? AND "users"."uid" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["provider", "google_oauth2"], ["uid", "108513084629689564112"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.1ms)[0m  [1m[33mUPDATE "users" SET "oauth_token" = ?, "oauth_expires_at" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["oauth_token", "ya29.GlwzBKo2pcQlODnCxoXtHGJWvnrftWfgPzaMmBiBqtoOZZqJK8zM_59LRHYL63FNJI4sXLrgvORsH58MXagMYjFs-BIWJL4i-2tczmEOvNA1FGClGshHm9hP18JjDw"], ["oauth_expires_at", 2017-04-21 01:07:10 UTC], ["updated_at", 2017-04-21 00:07:11 UTC], ["id", 1]]
+  [1m[35m (134.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCircle Load (0.2ms)[0m  [1m[34mSELECT  "circles".* FROM "circles" WHERE "circles"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+Redirected to http://localhost:3000/circles/10/orders
+Completed 302 Found in 145ms (ActiveRecord: 137.0ms)
+
+
+Started GET "/circles/10/orders" for 127.0.0.1 at 2017-04-20 20:07:11 -0400
+Processing by Circles::OrdersController#index as HTML
+  Parameters: {"circle_id"=>"10"}
+  [1m[36mCircle Load (0.6ms)[0m  [1m[34mSELECT  "circles".* FROM "circles" WHERE "circles"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "orders" WHERE "orders"."circle_id" = ? AND "orders"."acceptUserName" = ?[0m  [["circle_id", 10], ["acceptUserName", "-1"]]
+Redirected to http://localhost:3000/circles/10/orders/empty
+Completed 302 Found in 5ms (ActiveRecord: 0.9ms)
+
+
+Started GET "/circles/10/orders/empty" for 127.0.0.1 at 2017-04-20 20:07:11 -0400
+Processing by Circles::OrdersController#empty as HTML
+  Parameters: {"circle_id"=>"10"}
+  [1m[36mCircle Load (0.2ms)[0m  [1m[34mSELECT  "circles".* FROM "circles" WHERE "circles"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  Rendering circles/orders/empty.html.erb within layouts/application
+  Rendered circles/orders/empty.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 41ms (Views: 39.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-04-20 20:07:36 -0400
+Processing by LoginController#index as HTML
+  Rendering login/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered login/index.html.erb within layouts/application (58.4ms)
+Completed 200 OK in 80ms (Views: 77.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/signout" for 127.0.0.1 at 2017-04-20 20:07:37 -0400
+Processing by SessionsController#destroy as HTML
+Redirected to http://localhost:3000/
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-04-20 20:07:37 -0400
+Processing by LoginController#index as HTML
+  Rendering login/index.html.erb within layouts/application
+  Rendered login/index.html.erb within layouts/application (53.7ms)
+Completed 200 OK in 72ms (Views: 69.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-04-20 20:07:41 -0400
+Processing by LoginController#index as HTML
+  Rendering login/index.html.erb within layouts/application
+  Rendered login/index.html.erb within layouts/application (43.0ms)
+Completed 200 OK in 66ms (Views: 65.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/auth/google_oauth2" for 127.0.0.1 at 2017-04-20 20:07:42 -0400
+Started GET "/auth/google_oauth2" for 127.0.0.1 at 2017-04-20 20:07:42 -0400
+Started GET "/auth/google_oauth2/callback?state=645a1a453083b76da92b77fcb421e2245a9fac803f940b75&code=4/ReGIKYB9Bv7gKB0XXfdbzzzAFvrZ8tHu7eDwj7gv1FM" for 127.0.0.1 at 2017-04-20 20:07:44 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"state"=>"645a1a453083b76da92b77fcb421e2245a9fac803f940b75", "code"=>"4/ReGIKYB9Bv7gKB0XXfdbzzzAFvrZ8tHu7eDwj7gv1FM", "provider"=>"google_oauth2"}
+DEPRECATION WARNING: env is deprecated and will be removed from Rails 5.1 (called from create at /home/ttkim/Desktop/KarmaWeb/app/controllers/sessions_controller.rb:3)
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."provider" = ? AND "users"."uid" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["provider", "google_oauth2"], ["uid", "108513084629689564112"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.2ms)[0m  [1m[33mUPDATE "users" SET "oauth_token" = ?, "oauth_expires_at" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["oauth_token", "ya29.GlwzBGJlG-eUy6V8pX4T1BgAoqY3PL-LYt0iRagp4E4xn6DWVy3dMWx4WSkRETuV-dDWdHf2rVieyqqPGFF7Z1Ld1qO_p5d-oU_pxwmeKEX7slJirLGrbakJPEYkwg"], ["oauth_expires_at", 2017-04-21 01:07:44 UTC], ["updated_at", 2017-04-21 00:07:44 UTC], ["id", 1]]
+  [1m[35m (53.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCircle Load (0.2ms)[0m  [1m[34mSELECT  "circles".* FROM "circles" WHERE "circles"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+Redirected to http://localhost:3000/circles/10/orders
+Completed 302 Found in 63ms (ActiveRecord: 55.9ms)
+
+
+Started GET "/circles/10/orders" for 127.0.0.1 at 2017-04-20 20:07:44 -0400
+Processing by Circles::OrdersController#index as HTML
+  Parameters: {"circle_id"=>"10"}
+  [1m[36mCircle Load (0.3ms)[0m  [1m[34mSELECT  "circles".* FROM "circles" WHERE "circles"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "orders" WHERE "orders"."circle_id" = ? AND "orders"."acceptUserName" = ?[0m  [["circle_id", 10], ["acceptUserName", "-1"]]
+Redirected to http://localhost:3000/circles/10/orders/empty
+Completed 302 Found in 5ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/circles/10/orders/empty" for 127.0.0.1 at 2017-04-20 20:07:44 -0400
+Processing by Circles::OrdersController#empty as HTML
+  Parameters: {"circle_id"=>"10"}
+  [1m[36mCircle Load (0.3ms)[0m  [1m[34mSELECT  "circles".* FROM "circles" WHERE "circles"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  Rendering circles/orders/empty.html.erb within layouts/application
+  Rendered circles/orders/empty.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 57ms (Views: 54.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-04-20 20:08:18 -0400
+Processing by LoginController#index as HTML
+  Rendering login/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered login/index.html.erb within layouts/application (98.2ms)
+Completed 200 OK in 139ms (Views: 136.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/signout" for 127.0.0.1 at 2017-04-20 20:08:31 -0400
+Processing by SessionsController#destroy as HTML
+Redirected to http://localhost:3000/
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-04-20 20:08:31 -0400
+Processing by LoginController#index as HTML
+  Rendering login/index.html.erb within layouts/application
+  Rendered login/index.html.erb within layouts/application (107.6ms)
+Completed 200 OK in 133ms (Views: 130.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/auth/google_oauth2" for 127.0.0.1 at 2017-04-20 20:08:36 -0400
+Started GET "/auth/google_oauth2" for 127.0.0.1 at 2017-04-20 20:08:36 -0400
+Started GET "/auth/google_oauth2/callback?state=5679498a07081e7fdcb21b612dc6eccde4f059199ef56ffd&code=4/F4Q_WUkr-5xm_kTNNpIIj6gxAliEBtrZOd72ErfjF88" for 127.0.0.1 at 2017-04-20 20:08:45 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"state"=>"5679498a07081e7fdcb21b612dc6eccde4f059199ef56ffd", "code"=>"4/F4Q_WUkr-5xm_kTNNpIIj6gxAliEBtrZOd72ErfjF88", "provider"=>"google_oauth2"}
+DEPRECATION WARNING: env is deprecated and will be removed from Rails 5.1 (called from create at /home/ttkim/Desktop/KarmaWeb/app/controllers/sessions_controller.rb:3)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."provider" = ? AND "users"."uid" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["provider", "google_oauth2"], ["uid", "108513084629689564112"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[33mUPDATE "users" SET "oauth_token" = ?, "oauth_expires_at" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["oauth_token", "ya29.GlwzBMQrz6EcsOyHzLNc6k7q2opvjwWCfWyUFe9ZwMHuC5tNTqcmQNJnge35bi2oIcU1VzwcIsvW9wW0A5jRLwLOL4puxGJfSU3PpY91vCwdPPgfLxy2uepL_4y0_A"], ["oauth_expires_at", 2017-04-21 01:08:45 UTC], ["updated_at", 2017-04-21 00:08:45 UTC], ["id", 1]]
+  [1m[35m (67.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCircle Load (0.1ms)[0m  [1m[34mSELECT  "circles".* FROM "circles" WHERE "circles"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+Redirected to http://localhost:3000/circles/10/orders
+Completed 302 Found in 75ms (ActiveRecord: 68.1ms)
+
+
+Started GET "/circles/10/orders" for 127.0.0.1 at 2017-04-20 20:08:45 -0400
+Processing by Circles::OrdersController#index as HTML
+  Parameters: {"circle_id"=>"10"}
+  [1m[36mCircle Load (0.2ms)[0m  [1m[34mSELECT  "circles".* FROM "circles" WHERE "circles"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "orders" WHERE "orders"."circle_id" = ? AND "orders"."acceptUserName" = ?[0m  [["circle_id", 10], ["acceptUserName", "-1"]]
+Redirected to http://localhost:3000/circles/10/orders/empty
+Completed 302 Found in 5ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/circles/10/orders/empty" for 127.0.0.1 at 2017-04-20 20:08:45 -0400
+Processing by Circles::OrdersController#empty as HTML
+  Parameters: {"circle_id"=>"10"}
+  [1m[36mCircle Load (0.1ms)[0m  [1m[34mSELECT  "circles".* FROM "circles" WHERE "circles"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  Rendering circles/orders/empty.html.erb within layouts/application
+  Rendered circles/orders/empty.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 37ms (Views: 34.6ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/users/index" for 127.0.0.1 at 2017-04-20 20:08:48 -0400
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (5.4ms)
+Completed 200 OK in 57ms (Views: 54.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/circles/" for 127.0.0.1 at 2017-04-20 20:09:16 -0400
+Processing by CirclesController#index as HTML
+  [1m[36mCircle Load (0.4ms)[0m  [1m[34mSELECT "circles".* FROM "circles"[0m
+  Rendering circles/index.html.erb within layouts/application
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT "circles".* FROM "circles"[0m
+  Rendered circles/index.html.erb within layouts/application (7.5ms)
+Completed 200 OK in 88ms (Views: 82.8ms | ActiveRecord: 0.5ms)
+
+
