@@ -2,12 +2,12 @@ require 'circles_controller.rb'
 
 class Circles::OrdersController < ApplicationController
   before_filter :load_parent
-  before_action :set_order, only: [:show, :edit, :update, :destroy]
+  before_action :set_order, only: [:show, :edit, :update, :destroy, :accept]
+  before_action :set_user, only: [:accept, :create]
 
   # GET /orders
   # GET /orders.json
   def index
-    @orders = @circle.orders.all
     # Show only the orders that haven't been accepted
     @orders = @circle.orders.where(acceptUserName: "-1")
     if @orders.empty?
@@ -15,11 +15,18 @@ class Circles::OrdersController < ApplicationController
     end
   end
 
+  def accept
+    # Make sure you can't accept your own request
+    if (@user.name != @order.requestUserName)
+      @order.acceptUserName = @user.name
+      @order.save
+      redirect_to circle_orders_path(@circle), :notice => 'You successfully accepted the request.'
+    else 
+      redirect_to circle_orders_path(@circle), :notice => 'You cannot accept your own request.'
+    end
+  end
+
   def empty
-    # @orders = @circle.orders.all
-    # if !(@orders.empty?)
-    #   redirect_to circle_orders_path
-    # end
   end
 
   # GET /orders/1
@@ -41,8 +48,7 @@ class Circles::OrdersController < ApplicationController
   def create
     @order = @circle.orders.new(order_params)
     @order.circleName = @circle.name
-    @current_user = User.find_by id: session[:user_id]
-    @order.requestUserName = @current_user.name
+    @order.requestUserName = @user.name
     respond_to do |format|
       if @order.save
         format.html { redirect_to @circle, notice: 'Order was successfully created.' }
@@ -82,6 +88,10 @@ class Circles::OrdersController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_order
       @order = @circle.orders.find(params[:id])
+    end
+
+    def set_user
+      @user = User.find_by id: session[:user_id]
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

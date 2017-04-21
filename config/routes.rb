@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   resources :circles do
   	resources :orders, controller: 'circles/orders' do
       collection { get :empty }
+      member { get :accept }
     end
   end
 
