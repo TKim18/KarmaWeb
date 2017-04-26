@@ -1,7 +1,7 @@
 class User < ApplicationRecord
 	before_save :default_values
 	def default_values
-		self.circle_id ||= -1
+		self.circleName ||= '-1'
 	end
     def self.from_omniauth(auth)
         where(provider: auth.provider, uid: auth.uid).first_or_initialize.tap do |user|
@@ -14,11 +14,11 @@ class User < ApplicationRecord
 	    end
 	end
 
-	def self.findCircleId(userId)
+	def self.findCircleName(userId)
 		# circle = User.where("uid = ?", userId).pluck(:circleName).first
 		# Check if a user already has a circle
 		# If the id is -1, then they do not
 		current_user = User.find_by id: userId
-		return current_user.circle_id
+		return current_user.circleName
 	end
 end

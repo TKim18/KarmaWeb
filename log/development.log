@@ -7214,3 +7214,351 @@ Processing by Circles::OrdersController#index as HTML
 Completed 200 OK in 62ms (Views: 56.8ms | ActiveRecord: 0.7ms)
 
 
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_orders_on_circle_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_orders_on_circle_id' AND type='index'
+[0m
+  [1m[35m (0.2ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_circle_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_circle_id' AND type='index'
+[0m
+Started GET "/" for 127.0.0.1 at 2017-04-21 16:13:06 -0400
+Started GET "/" for 127.0.0.1 at 2017-04-21 16:13:06 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (1.0ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by LoginController#index as HTML
+Processing by LoginController#index as HTML
+  Rendering login/index.html.erb within layouts/application
+  Rendering login/index.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered login/index.html.erb within layouts/application (2793.2ms)
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered login/index.html.erb within layouts/application (2825.2ms)
+Completed 200 OK in 3079ms (Views: 2994.4ms | ActiveRecord: 1.7ms)
+
+
+Completed 200 OK in 3095ms (Views: 3023.8ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/signout" for 127.0.0.1 at 2017-04-21 16:13:12 -0400
+Processing by SessionsController#destroy as HTML
+Redirected to http://localhost:3000/
+Completed 302 Found in 3ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-04-21 16:13:12 -0400
+Processing by LoginController#index as HTML
+  Rendering login/index.html.erb within layouts/application
+  Rendered login/index.html.erb within layouts/application (106.9ms)
+Completed 200 OK in 143ms (Views: 141.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/auth/google_oauth2" for 127.0.0.1 at 2017-04-21 16:13:13 -0400
+Started GET "/auth/google_oauth2" for 127.0.0.1 at 2017-04-21 16:13:22 -0400
+Started GET "/" for 127.0.0.1 at 2017-04-21 16:13:26 -0400
+Processing by LoginController#index as HTML
+  Rendering login/index.html.erb within layouts/application
+  Rendered login/index.html.erb within layouts/application (56.7ms)
+Completed 200 OK in 82ms (Views: 80.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/auth/google_oauth2" for 127.0.0.1 at 2017-04-21 16:13:27 -0400
+Started GET "/auth/google_oauth2" for 127.0.0.1 at 2017-04-21 16:13:27 -0400
+Started GET "/auth/google_oauth2/callback?state=bcce5cbf5217228c6e1b349da767466b9ad0ff4b7a4264dc&code=4/FjnP1JDv8hrP5pcTyhE3Yf4LuvHRsY9Rs1bcws4InQo" for 127.0.0.1 at 2017-04-21 16:13:27 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"state"=>"bcce5cbf5217228c6e1b349da767466b9ad0ff4b7a4264dc", "code"=>"4/FjnP1JDv8hrP5pcTyhE3Yf4LuvHRsY9Rs1bcws4InQo", "provider"=>"google_oauth2"}
+DEPRECATION WARNING: env is deprecated and will be removed from Rails 5.1 (called from create at /home/ttkim/Desktop/KarmaWeb/app/controllers/sessions_controller.rb:3)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."provider" = ? AND "users"."uid" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["provider", "google_oauth2"], ["uid", "108513084629689564112"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (17.7ms)[0m  [1m[33mUPDATE "users" SET "oauth_token" = ?, "oauth_expires_at" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["oauth_token", "ya29.GlwzBLuTikfn9LygL1nNjKzf27xLg10_qNPGvTbNk1iluCfRSWsVGHdN96JdJ8XpgjoykwkADX3HFSrCspli17z6ROOtCAecqvVCG-o0MKT4RYZ4-6CoMbLqFh5TUg"], ["oauth_expires_at", 2017-04-21 21:13:27 UTC], ["updated_at", 2017-04-21 20:13:27 UTC], ["id", 1]]
+  [1m[35m (109.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCircle Load (0.2ms)[0m  [1m[34mSELECT  "circles".* FROM "circles" WHERE "circles"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+Redirected to http://localhost:3000/circles/2/orders
+Completed 302 Found in 195ms (ActiveRecord: 128.7ms)
+
+
+Started GET "/circles/2/orders" for 127.0.0.1 at 2017-04-21 16:13:28 -0400
+DEPRECATION WARNING: before_filter is deprecated and will be removed in Rails 5.1. Use before_action instead. (called from <class:OrdersController> at /home/ttkim/Desktop/KarmaWeb/app/controllers/circles/orders_controller.rb:4)
+Processing by Circles::OrdersController#index as HTML
+  Parameters: {"circle_id"=>"2"}
+  [1m[36mCircle Load (0.6ms)[0m  [1m[34mSELECT  "circles".* FROM "circles" WHERE "circles"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "orders" WHERE "orders"."circle_id" = ? AND "orders"."acceptUserName" = ?[0m  [["circle_id", 2], ["acceptUserName", "-1"]]
+  Rendering circles/orders/index.html.erb within layouts/application
+  [1m[36mOrder Load (0.3ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."circle_id" = ? AND "orders"."acceptUserName" = ?[0m  [["circle_id", 2], ["acceptUserName", "-1"]]
+  Rendered circles/orders/index.html.erb within layouts/application (36.5ms)
+Completed 200 OK in 184ms (Views: 86.7ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-04-21 16:16:48 -0400
+Processing by LoginController#index as HTML
+  Rendering login/index.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered login/index.html.erb within layouts/application (82.6ms)
+Completed 200 OK in 95ms (Views: 93.7ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/signout" for 127.0.0.1 at 2017-04-21 16:16:49 -0400
+Processing by SessionsController#destroy as HTML
+Redirected to http://localhost:3000/
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-04-21 16:16:49 -0400
+Processing by LoginController#index as HTML
+  Rendering login/index.html.erb within layouts/application
+  Rendered login/index.html.erb within layouts/application (31.7ms)
+Completed 200 OK in 52ms (Views: 51.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/auth/google_oauth2" for 127.0.0.1 at 2017-04-21 16:16:51 -0400
+Started GET "/auth/google_oauth2" for 127.0.0.1 at 2017-04-21 16:16:51 -0400
+Started GET "/auth/google_oauth2/callback?state=34d580d49e2d01cd79f6bc35c5ab39088b423908c5015fec&code=4/FL-5cydfWmL8W1bva1ZHmYI7rIsruFUoDfB5UMG67mU" for 127.0.0.1 at 2017-04-21 16:16:51 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"state"=>"34d580d49e2d01cd79f6bc35c5ab39088b423908c5015fec", "code"=>"4/FL-5cydfWmL8W1bva1ZHmYI7rIsruFUoDfB5UMG67mU", "provider"=>"google_oauth2"}
+DEPRECATION WARNING: env is deprecated and will be removed from Rails 5.1 (called from create at /home/ttkim/Desktop/KarmaWeb/app/controllers/sessions_controller.rb:3)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."provider" = ? AND "users"."uid" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["provider", "google_oauth2"], ["uid", "108513084629689564112"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "users" SET "oauth_token" = ?, "oauth_expires_at" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["oauth_token", "ya29.GlwzBC1JGgLqIbIxnuWzDKLfbrZ3ehijLvILMJAzf9BOk5SK_TMvnuPIds5ZuI3-PGO0y9Ilywj_EVwgn1EiP0eDLX9KVUMTFwx3M1SCtY8XoPoW3SoeQVNPekmxJg"], ["oauth_expires_at", 2017-04-21 21:16:51 UTC], ["updated_at", 2017-04-21 20:16:51 UTC], ["id", 1]]
+  [1m[35m (148.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCircle Load (0.2ms)[0m  [1m[34mSELECT  "circles".* FROM "circles" WHERE "circles"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+Redirected to http://localhost:3000/circles/2/orders
+Completed 302 Found in 155ms (ActiveRecord: 149.8ms)
+
+
+Started GET "/circles/2/orders" for 127.0.0.1 at 2017-04-21 16:16:52 -0400
+Processing by Circles::OrdersController#index as HTML
+  Parameters: {"circle_id"=>"2"}
+  [1m[36mCircle Load (0.2ms)[0m  [1m[34mSELECT  "circles".* FROM "circles" WHERE "circles"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "orders" WHERE "orders"."circle_id" = ? AND "orders"."acceptUserName" = ?[0m  [["circle_id", 2], ["acceptUserName", "-1"]]
+  Rendering circles/orders/index.html.erb within layouts/application
+  [1m[36mOrder Load (0.3ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."circle_id" = ? AND "orders"."acceptUserName" = ?[0m  [["circle_id", 2], ["acceptUserName", "-1"]]
+  Rendered circles/orders/index.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 33ms (Views: 28.8ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/users/index" for 127.0.0.1 at 2017-04-21 16:24:54 -0400
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 158ms (Views: 81.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/auth/google_oauth2" for 127.0.0.1 at 2017-04-21 16:32:45 -0400
+Started GET "/auth/google_oauth2" for 127.0.0.1 at 2017-04-21 16:32:46 -0400
+Started GET "/auth/google_oauth2/callback?state=94e09de32b92420694d972bcdfc63bf90cbd686193887cd3&code=4/G6RgmWZ4mAX-XI-v25Bu3bQwu47rGDNbq54rH2qwEK0" for 127.0.0.1 at 2017-04-21 16:32:46 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"state"=>"94e09de32b92420694d972bcdfc63bf90cbd686193887cd3", "code"=>"4/G6RgmWZ4mAX-XI-v25Bu3bQwu47rGDNbq54rH2qwEK0", "provider"=>"google_oauth2"}
+DEPRECATION WARNING: env is deprecated and will be removed from Rails 5.1 (called from create at /home/ttkim/Desktop/KarmaWeb/app/controllers/sessions_controller.rb:3)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."provider" = ? AND "users"."uid" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["provider", "google_oauth2"], ["uid", "108513084629689564112"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "users" SET "oauth_token" = ?, "oauth_expires_at" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["oauth_token", "ya29.GlwzBPNNE0JqJBeEGoe1wTbBEeRr7bzakgBNxlIUa03kFltk5qL4a5J52sFWCGj5Pb8i9merk-3uQAuosN8xFEurBoJjMChYAvUyaHPd2_8hoiqiynMZuuN1317TFA"], ["oauth_expires_at", 2017-04-21 21:32:46 UTC], ["updated_at", 2017-04-21 20:32:46 UTC], ["id", 1]]
+  [1m[35m (142.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCircle Load (0.1ms)[0m  [1m[34mSELECT  "circles".* FROM "circles" WHERE "circles"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+Redirected to http://localhost:3000/circles/2/orders
+Completed 302 Found in 151ms (ActiveRecord: 143.1ms)
+
+
+Started GET "/circles/2/orders" for 127.0.0.1 at 2017-04-21 16:32:46 -0400
+Processing by Circles::OrdersController#index as HTML
+  Parameters: {"circle_id"=>"2"}
+  [1m[36mCircle Load (0.1ms)[0m  [1m[34mSELECT  "circles".* FROM "circles" WHERE "circles"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "orders" WHERE "orders"."circle_id" = ? AND "orders"."acceptUserName" = ?[0m  [["circle_id", 2], ["acceptUserName", "-1"]]
+  Rendering circles/orders/index.html.erb within layouts/application
+  [1m[36mOrder Load (0.3ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."circle_id" = ? AND "orders"."acceptUserName" = ?[0m  [["circle_id", 2], ["acceptUserName", "-1"]]
+  Rendered circles/orders/index.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 36ms (Views: 29.2ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/circles/2/orders" for 127.0.0.1 at 2017-04-21 16:32:53 -0400
+Processing by Circles::OrdersController#index as HTML
+  Parameters: {"circle_id"=>"2"}
+  [1m[36mCircle Load (0.2ms)[0m  [1m[34mSELECT  "circles".* FROM "circles" WHERE "circles"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "orders" WHERE "orders"."circle_id" = ? AND "orders"."acceptUserName" = ?[0m  [["circle_id", 2], ["acceptUserName", "-1"]]
+  Rendering circles/orders/index.html.erb within layouts/application
+  [1m[36mOrder Load (0.5ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."circle_id" = ? AND "orders"."acceptUserName" = ?[0m  [["circle_id", 2], ["acceptUserName", "-1"]]
+  Rendered circles/orders/index.html.erb within layouts/application (6.9ms)
+Completed 200 OK in 77ms (Views: 70.1ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-04-21 16:32:54 -0400
+Processing by LoginController#index as HTML
+  Rendering login/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered login/index.html.erb within layouts/application (48.1ms)
+Completed 200 OK in 72ms (Views: 70.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/signout" for 127.0.0.1 at 2017-04-21 16:32:56 -0400
+Processing by SessionsController#destroy as HTML
+Redirected to http://localhost:3000/
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-04-21 16:32:56 -0400
+Processing by LoginController#index as HTML
+  Rendering login/index.html.erb within layouts/application
+  Rendered login/index.html.erb within layouts/application (41.9ms)
+Completed 200 OK in 59ms (Views: 56.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/auth/google_oauth2" for 127.0.0.1 at 2017-04-21 16:32:56 -0400
+Started GET "/auth/google_oauth2" for 127.0.0.1 at 2017-04-21 16:32:56 -0400
+Started GET "/auth/google_oauth2/callback?state=9c4555cf90d38099b25adf4a6e95d6ee48bb4cccaafcfb85&code=4/KypafrLWmka3TUeECgzNi8CC0uWkYUTJe7m2CsF5st8" for 127.0.0.1 at 2017-04-21 16:32:56 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"state"=>"9c4555cf90d38099b25adf4a6e95d6ee48bb4cccaafcfb85", "code"=>"4/KypafrLWmka3TUeECgzNi8CC0uWkYUTJe7m2CsF5st8", "provider"=>"google_oauth2"}
+DEPRECATION WARNING: env is deprecated and will be removed from Rails 5.1 (called from create at /home/ttkim/Desktop/KarmaWeb/app/controllers/sessions_controller.rb:3)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."provider" = ? AND "users"."uid" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["provider", "google_oauth2"], ["uid", "108513084629689564112"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.5ms)[0m  [1m[33mUPDATE "users" SET "oauth_token" = ?, "oauth_expires_at" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["oauth_token", "ya29.GlwzBPPV4HOu2nS1i7egZGzGOi7pYfbV5vd6bUwK239CfX_MY4uPRiKGXr4DvgKhAAf-Flw8bWYFUqwPylhTTDnMSIVm5aFUOkN1r4USoKKSeOLs7G1QZpuYTD8-hg"], ["oauth_expires_at", 2017-04-21 21:32:56 UTC], ["updated_at", 2017-04-21 20:32:57 UTC], ["id", 1]]
+  [1m[35m (143.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCircle Load (0.1ms)[0m  [1m[34mSELECT  "circles".* FROM "circles" WHERE "circles"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+Redirected to http://localhost:3000/circles/2/orders
+Completed 302 Found in 151ms (ActiveRecord: 145.5ms)
+
+
+Started GET "/circles/2/orders" for 127.0.0.1 at 2017-04-21 16:32:57 -0400
+Processing by Circles::OrdersController#index as HTML
+  Parameters: {"circle_id"=>"2"}
+  [1m[36mCircle Load (0.1ms)[0m  [1m[34mSELECT  "circles".* FROM "circles" WHERE "circles"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "orders" WHERE "orders"."circle_id" = ? AND "orders"."acceptUserName" = ?[0m  [["circle_id", 2], ["acceptUserName", "-1"]]
+  Rendering circles/orders/index.html.erb within layouts/application
+  [1m[36mOrder Load (0.3ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."circle_id" = ? AND "orders"."acceptUserName" = ?[0m  [["circle_id", 2], ["acceptUserName", "-1"]]
+  Rendered circles/orders/index.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 72ms (Views: 66.9ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-04-26 19:30:31 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by LoginController#index as HTML
+  Rendering login/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered login/index.html.erb within layouts/application (1057.8ms)
+Completed 200 OK in 1164ms (Views: 1124.7ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/signout" for 127.0.0.1 at 2017-04-26 19:33:40 -0400
+Processing by SessionsController#destroy as HTML
+Redirected to http://localhost:3000/
+Completed 302 Found in 3ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-04-26 19:33:40 -0400
+Processing by LoginController#index as HTML
+  Rendering login/index.html.erb within layouts/application
+  Rendered login/index.html.erb within layouts/application (60.6ms)
+Completed 200 OK in 81ms (Views: 78.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/auth/google_oauth2" for 127.0.0.1 at 2017-04-26 19:33:41 -0400
+Started GET "/auth/google_oauth2" for 127.0.0.1 at 2017-04-26 19:33:42 -0400
+Started GET "/auth/google_oauth2/callback?state=fb5f717a179cabe9d5b8c1a83f086a35b8d4cd93b82a6373&code=4/KY6a3Qd_mgdZyvVvvnH4nh9LSoaXey41hg0NqDnNbpE" for 127.0.0.1 at 2017-04-26 19:33:42 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"state"=>"fb5f717a179cabe9d5b8c1a83f086a35b8d4cd93b82a6373", "code"=>"4/KY6a3Qd_mgdZyvVvvnH4nh9LSoaXey41hg0NqDnNbpE", "provider"=>"google_oauth2"}
+DEPRECATION WARNING: env is deprecated and will be removed from Rails 5.1 (called from create at /home/ttkim/Desktop/KarmaWeb/app/controllers/sessions_controller.rb:3)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."provider" = ? AND "users"."uid" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["provider", "google_oauth2"], ["uid", "108513084629689564112"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[33mUPDATE "users" SET "oauth_token" = ?, "oauth_expires_at" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["oauth_token", "ya29.Glw4BKANlyPH5V5nYRHO8kPc8q8RwQl8akswCIuGntKN__wncMAZjoXlrg02PBbvNnZF5bSrZ1MXSAmN5LvQXqLOTlM-DSTueZ6z0ymyhVUj4g0VQC84_fupOKndZQ"], ["oauth_expires_at", 2017-04-27 00:33:42 UTC], ["updated_at", 2017-04-26 23:33:42 UTC], ["id", 1]]
+  [1m[35m (65.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCircle Load (0.1ms)[0m  [1m[34mSELECT  "circles".* FROM "circles" WHERE "circles"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+Redirected to http://localhost:3000/circles/2/orders
+Completed 302 Found in 96ms (ActiveRecord: 67.1ms)
+
+
+Started GET "/circles/2/orders" for 127.0.0.1 at 2017-04-26 19:33:42 -0400
+DEPRECATION WARNING: before_filter is deprecated and will be removed in Rails 5.1. Use before_action instead. (called from <class:OrdersController> at /home/ttkim/Desktop/KarmaWeb/app/controllers/circles/orders_controller.rb:4)
+Processing by Circles::OrdersController#index as HTML
+  Parameters: {"circle_id"=>"2"}
+  [1m[36mCircle Load (0.1ms)[0m  [1m[34mSELECT  "circles".* FROM "circles" WHERE "circles"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "orders" WHERE "orders"."circle_id" = ? AND "orders"."acceptUserName" = ?[0m  [["circle_id", 2], ["acceptUserName", "-1"]]
+  Rendering circles/orders/index.html.erb within layouts/application
+  [1m[36mOrder Load (0.3ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."circle_id" = ? AND "orders"."acceptUserName" = ?[0m  [["circle_id", 2], ["acceptUserName", "-1"]]
+  Rendered circles/orders/index.html.erb within layouts/application (31.8ms)
+Completed 200 OK in 118ms (Views: 60.6ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/circles/2/orders" for 127.0.0.1 at 2017-04-26 19:39:56 -0400
+DEPRECATION WARNING: before_filter is deprecated and will be removed in Rails 5.1. Use before_action instead. (called from <class:OrdersController> at /home/ttkim/Desktop/KarmaWeb/app/controllers/circles/orders_controller.rb:4)
+Processing by Circles::OrdersController#index as HTML
+  Parameters: {"circle_id"=>"2"}
+  [1m[36mCircle Load (0.4ms)[0m  [1m[34mSELECT  "circles".* FROM "circles" WHERE "circles"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "orders" WHERE "orders"."circle_id" = ? AND "orders"."acceptUserName" = ?[0m  [["circle_id", 2], ["acceptUserName", "-1"]]
+  Rendering circles/orders/index.html.erb within layouts/application
+  [1m[36mOrder Load (0.3ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."circle_id" = ? AND "orders"."acceptUserName" = ?[0m  [["circle_id", 2], ["acceptUserName", "-1"]]
+  Rendered circles/orders/index.html.erb within layouts/application (20.1ms)
+Completed 200 OK in 113ms (Views: 67.6ms | ActiveRecord: 4.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-04-26 19:39:59 -0400
+Processing by LoginController#index as HTML
+  Rendering login/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered login/index.html.erb within layouts/application (52.0ms)
+Completed 200 OK in 70ms (Views: 67.1ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/signout" for 127.0.0.1 at 2017-04-26 19:40:00 -0400
+Processing by SessionsController#destroy as HTML
+Redirected to http://localhost:3000/
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-04-26 19:40:00 -0400
+Processing by LoginController#index as HTML
+  Rendering login/index.html.erb within layouts/application
+  Rendered login/index.html.erb within layouts/application (36.7ms)
+Completed 200 OK in 56ms (Views: 54.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-04-26 19:40:00 -0400
+Processing by LoginController#index as HTML
+  Rendering login/index.html.erb within layouts/application
+  Rendered login/index.html.erb within layouts/application (35.8ms)
+Completed 200 OK in 48ms (Views: 47.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/auth/google_oauth2" for 127.0.0.1 at 2017-04-26 19:40:01 -0400
+Started GET "/auth/google_oauth2" for 127.0.0.1 at 2017-04-26 19:40:01 -0400
+Started GET "/auth/google_oauth2/callback?state=63a21b137032756cf06cbcb91e1dfbe6dd0407f4893e0b77&code=4/Y9YMuOBoBJ6pEmuiORKD_XJSztH8EbZu79I_uiQExzg" for 127.0.0.1 at 2017-04-26 19:40:02 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"state"=>"63a21b137032756cf06cbcb91e1dfbe6dd0407f4893e0b77", "code"=>"4/Y9YMuOBoBJ6pEmuiORKD_XJSztH8EbZu79I_uiQExzg", "provider"=>"google_oauth2"}
+DEPRECATION WARNING: env is deprecated and will be removed from Rails 5.1 (called from create at /home/ttkim/Desktop/KarmaWeb/app/controllers/sessions_controller.rb:3)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."provider" = ? AND "users"."uid" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["provider", "google_oauth2"], ["uid", "108513084629689564112"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "users" SET "oauth_token" = ?, "oauth_expires_at" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["oauth_token", "ya29.Glw4BNSkmcZkWVv0i4baMrnpkffN2HBXzJySXPMQLM54EKdjm1E8gUFBrFyHVgkkWYWhuz84Fzr2LI7ucxOlntOzqXsMiEAEREVFtcjVBBh8-xJmwJ-wSaAiHjmJIQ"], ["oauth_expires_at", 2017-04-27 00:40:01 UTC], ["updated_at", 2017-04-26 23:40:02 UTC], ["id", 1]]
+  [1m[35m (70.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCircle Load (0.4ms)[0m  [1m[34mSELECT  "circles".* FROM "circles" WHERE "circles"."name" = ? LIMIT ?[0m  [["name", "Brunch Club"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/circles/2/orders
+Completed 302 Found in 84ms (ActiveRecord: 71.6ms)
+
+
+Started GET "/circles/2/orders" for 127.0.0.1 at 2017-04-26 19:40:02 -0400
+Processing by Circles::OrdersController#index as HTML
+  Parameters: {"circle_id"=>"2"}
+  [1m[36mCircle Load (0.2ms)[0m  [1m[34mSELECT  "circles".* FROM "circles" WHERE "circles"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "orders" WHERE "orders"."circle_id" = ? AND "orders"."acceptUserName" = ?[0m  [["circle_id", 2], ["acceptUserName", "-1"]]
+  Rendering circles/orders/index.html.erb within layouts/application
+  [1m[36mOrder Load (0.4ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."circle_id" = ? AND "orders"."acceptUserName" = ?[0m  [["circle_id", 2], ["acceptUserName", "-1"]]
+  Rendered circles/orders/index.html.erb within layouts/application (6.1ms)
+Completed 200 OK in 83ms (Views: 72.2ms | ActiveRecord: 0.9ms)
+
+

@@ -6,3 +6,10 @@ From memory:
 4. Populate controllers with some logic
 5. Make more views depending on what features are required
 6. Rinse and repeat 4-5
+
+## Features left to be implemented ##
+* Email invite users 
+* Personal information view/edit
+* Categories
+* Locations 
+* Menu
