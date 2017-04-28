@@ -1,3 +1,5 @@
 *.jpg
 db/development.sqlite3
 tmp/*
+config/application.rb
+config/environments/production.rb

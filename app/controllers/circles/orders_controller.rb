@@ -3,7 +3,7 @@ require 'circles_controller.rb'
 class Circles::OrdersController < ApplicationController
   before_filter :load_parent
   before_action :set_order, only: [:show, :edit, :update, :destroy, :accept]
-  before_action :set_user, only: [:accept, :create]
+  before_action :set_user, only: [:accept, :create, :index]
 
   # GET /orders
   # GET /orders.json
@@ -51,6 +51,7 @@ class Circles::OrdersController < ApplicationController
     @order.requestUserName = @user.name
     respond_to do |format|
       if @order.save
+        UserMailer.order_placed_email(@user).deliver
         format.html { redirect_to @circle, notice: 'Order was successfully created.' }
         # format.json { render :show, status: :created, location: @order }
       else

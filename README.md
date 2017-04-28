@@ -13,3 +13,7 @@ From memory:
 * Categories
 * Locations 
 * Menu
+* Bug Fix on SQLite/PGSQL transition (D)
+* Logout
+* Authentication keep in/keep out
+
