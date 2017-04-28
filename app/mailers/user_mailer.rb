@@ -4,6 +4,6 @@ class UserMailer < ApplicationMailer
   def order_placed_email(user)
   	@user = user
   	# @url = 'http://google.com'
-  	mail(to: "timmylimy04@gmail.com", subject: "Order From Someone")
+  	mail(to: "ttkim@wesleyan.edu", subject: "Order From Someone")
   end
 end
