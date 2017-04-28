@@ -1,0 +1,18 @@
+<h1>Hello! You must be a new user.<h1>
+
+<p>Before you start, we would like to get to know you!
+   <br>
+   Please fill in your information here</p>
+
+<%= form_tag user_path(@user), :method => :put do %>
+	<%= label :email, 'Email' %>
+	<%= text_field_tag "user[email]" %> 
+	<br>
+	<%= label :fullName, 'Wesleyan Username' %>
+	<%= text_field_tag "user[fullName]" %> 
+	<br>
+	<%= label :homeLocation, 'Home Location on Campus' %>
+	<%= text_field_tag "user[homeLocation]" %>
+	<br>
+	<%= submit_tag "Let's go join a Circle!", class: 'button' %>
+<% end %>

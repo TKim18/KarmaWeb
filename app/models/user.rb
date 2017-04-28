@@ -2,7 +2,9 @@ class User < ApplicationRecord
 	before_save :default_values
 	def default_values
 		self.circleName ||= '-1'
+		self.karmaPoints = 40
 	end
+	
     def self.from_omniauth(auth)
         where(provider: auth.provider, uid: auth.uid).first_or_initialize.tap do |user|
             user.provider = auth.provider

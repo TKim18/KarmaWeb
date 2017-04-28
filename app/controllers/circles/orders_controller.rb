@@ -51,6 +51,7 @@ class Circles::OrdersController < ApplicationController
     @order.requestUserName = @user.name
     respond_to do |format|
       if @order.save
+        # filter users by circle id and loop through each use and send them an email
         UserMailer.order_placed_email(@user).deliver
         format.html { redirect_to @circle, notice: 'Order was successfully created.' }
         # format.json { render :show, status: :created, location: @order }
